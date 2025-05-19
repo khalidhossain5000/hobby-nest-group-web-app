@@ -25,7 +25,7 @@ const Slider = () => {
         {/* slider -1 */}
         <SwiperSlide>
             <div className="relative h-[100vh] w-full">
-                <img className="w-full max-h-[100vh]" src={sliderImg2} alt="" />
+                <img className="w-full h-[100vh] lg:max-h-[100vh]" src={sliderImg2} alt="" />
                 {/* text and black overlay */}
                 <div className="absolute inset-0 bg-[#00000091] flex flex-col justify-center items-center text-white text-center p-6">
                     <h2>Discover Local Groups That Share Your Interests</h2>
@@ -36,7 +36,7 @@ const Slider = () => {
       {/* slider - 2 */}
         <SwiperSlide>
             <div className="relative h-[100vh] w-full">
-                <img className="w-full max-h-[100vh]" src={sliderImg3} alt="" />
+                <img className="w-full h-[100vh] lg:max-h-[100vh]" src={sliderImg3} alt="" />
                 {/* text and black overlay */}
                 <div className="absolute inset-0 bg-[#00000091] flex flex-col justify-center items-center text-white text-center p-6">
                     <h2>Discover Local Groups That Share Your Interests</h2>
@@ -47,7 +47,7 @@ const Slider = () => {
         {/* slider - 3 */}
         <SwiperSlide>
             <div className="relative h-[100vh] w-full">
-                <img className="w-full max-h-[100vh]" src={sliderImg1} alt="" />
+                <img className="w-full h-[100vh] lg:max-h-[100vh]" src={sliderImg1} alt="" />
                 {/* text and black overlay */}
                 <div className="absolute inset-0 bg-[#00000091] flex flex-col justify-center items-center text-white text-center p-6">
                     <h2>Discover Local Groups That Share Your Interests</h2>
