@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-.active{
-    border-bottom: 2px solid red;
+a.active{
+  border-bottom: 3px solid blue;
+  padding-bottom: 5px;
+  
 }

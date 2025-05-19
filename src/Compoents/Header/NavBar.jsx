@@ -10,7 +10,7 @@ const NavBar = () => {
             <li><NavLink>Register(C)</NavLink></li>
     </>
   return (
-    <div className="bg-gray-200 backdrop-blur-2xl shadow-2xl">
+    <div className="pb-8 absolute top-0 left-0 w-full z-50 bg-transparent text-white ">
       <div className="navbar container mx-auto ">
         <div className="flex items-center justify-between w-full lg:navbar-start">
           <div className="dropdown">
@@ -43,7 +43,7 @@ const NavBar = () => {
           </div>
         </div>
         <div className="navbar-end hidden lg:flex">
-          <ul className="flex items-center gap-5 px-1 text-black font-bold">
+          <ul className="flex items-center gap-5 px-1 font-bold">
                 {links}
             
           </ul>
