@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData } from "react-router";
+import { Link, useLoaderData } from "react-router";
 
 const MyGroup = () => {
   const myGroupData = useLoaderData();
@@ -22,6 +22,7 @@ const MyGroup = () => {
                 <th>No</th>
                 <th>Group Image</th>
                 <th>Group Name</th>
+                <th>Description</th>
                 <th>category</th>
                 <th>Max Number</th>
                 <th>Meeting Location</th>
@@ -49,12 +50,14 @@ const MyGroup = () => {
                     </div>
                   </td>
                   <td>{group?.groupName}</td>
+                  <td>{group?.description}</td>
                   <td>{group?.category}</td>
                   <td>{group?.maxNumber}</td>
                   <td>{group?.meetingLocation}</td>
                   <td>{group?.startDate}</td>
                   <th>
-                    <button className="btn btn-xs">Update</button>
+                    
+                    <Link to={`/update-group/${group._id}`} className="btn btn-xs">Update</Link>
                     <button
                       onClick={() => handleDelete(group._id)}
                       className="btn btn-xs"
