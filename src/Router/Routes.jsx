@@ -35,7 +35,8 @@ export const router = createBrowserRouter([
     element:<GroupDetails/>
   },
   {
-    path: "my-group",
+    path: "my-group/:email",
+    loader:({params})=>fetch(`http://localhost:3000/all-groups/${params.email}`),
     element: <MyGroup />,
   },
   {

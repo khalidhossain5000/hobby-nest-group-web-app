@@ -21,10 +21,10 @@ const AuthProvider = ({children}) => {
         return signOut(auth)
     }
     //observer onAuthstatechange
-    console.log(user);
+    // console.log(user);
     useEffect(()=>{
-        const unsubscribe=onAuthStateChanged(auth,(createUser)=>{
-            setUser(createUser)
+        const unsubscribe=onAuthStateChanged(auth,(currentUser)=>{
+            setUser(currentUser)
         })
         return ()=>{
             unsubscribe()

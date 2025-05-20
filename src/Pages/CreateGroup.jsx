@@ -7,6 +7,8 @@ import { AuthContext } from "../Provider/AuthContext";
 const CreateGroup = () => {
   const [startDate, setStartDate] = useState(null);
   const { user } = use(AuthContext);
+  const email=user?.email;
+  
   const handleCreateGroup = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -17,9 +19,13 @@ const CreateGroup = () => {
       return
     }
     console.log(createGroupData);
+    if(!email){
+      return ;
+    }
     const allGroupsData = {
       ...createGroupData,
       startDate,
+      email
     };
     //send this data to the db
     fetch("http://localhost:3000/groups", {
@@ -87,6 +93,7 @@ const CreateGroup = () => {
                   type="text"
                   name="meetingLocation"
                   className="input w-full"
+                  defaultValue="enter a meeting locaitons"
                   placeholder="Meeting Location"
                 />
               </fieldset>
@@ -128,9 +135,9 @@ const CreateGroup = () => {
                   type="text"
                   name="user-name"
                   className="input w-full"
-                  placeholder="Group Name"
+                  
                   disabled
-                  defaultValue={`User Name : ${user?.displayName}`}
+                  value={`User Name : ${user?.displayName}`}
                 />
               </fieldset>
             </div>
@@ -141,9 +148,8 @@ const CreateGroup = () => {
                   type="text"
                   name="email-n"
                   className="input w-full"
-                  placeholder="Group Name"
                   disabled
-                  defaultValue={`User Name : ${user?.email}`}
+                  value={`User Name : ${user?.email || ''}`}
                 />
               </fieldset>
             </div>

@@ -4,12 +4,15 @@ import { AuthContext } from "../../Provider/AuthContext";
 
 const NavBar = () => {
   const {user,logOutUser}=use(AuthContext)
-  console.log(user);
+  const email=user?.email;
+  if(!email){
+    return
+  }
     const links=<>
             <li><NavLink to='/'>Home</NavLink></li>
             <li><NavLink to='/create-group'>Create Group(P)</NavLink></li>
             <li><NavLink to='/all-group'>All Groups</NavLink></li>
-            <li><NavLink to='/my-group'>My Group(P)</NavLink></li>
+            <li><NavLink to={`/my-group/${user?.email}`}>My Group(P)</NavLink></li>
 
     </>
     const handleLogOut=()=>{
