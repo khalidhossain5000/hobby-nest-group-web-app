@@ -1,14 +1,27 @@
-import React from "react";
+import React, { use } from "react";
 import { NavLink } from "react-router";
+import { AuthContext } from "../../Provider/AuthContext";
 
 const NavBar = () => {
+  const {user,logOutUser}=use(AuthContext)
+  console.log(user);
     const links=<>
             <li><NavLink>Home</NavLink></li>
             <li><NavLink>All Groups</NavLink></li>
             <li><NavLink>Create Group(P)</NavLink></li>
             <li><NavLink>My Group(P)</NavLink></li>
-            <li><NavLink>Register(C)</NavLink></li>
+
     </>
+    const handleLogOut=()=>{
+      logOutUser()
+      .then(()=>{
+        alert("Log Out Success")
+      })
+      .catch((error)=>{
+        alert("Sign out error")
+        console.log(error);
+      })
+    }
   return (
     <div className="pb-8 absolute top-0 left-0 w-full z-50 bg-transparent text-white ">
       <div className="navbar container mx-auto ">
@@ -36,6 +49,7 @@ const NavBar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               {links}
+             
             </ul>
           </div>
           <div>
@@ -45,7 +59,12 @@ const NavBar = () => {
         <div className="navbar-end hidden lg:flex">
           <ul className="flex items-center gap-5 px-1 font-bold">
                 {links}
-            
+               
+             {
+              user ? <div className="flex items-center gap-3 hover:bg-red-900"><img title={`${user.displayName}`} className={'w-22 h-22 rounded-full cursor-pointer ' } src={user.photoURL} alt="" /> <button onClick={handleLogOut} className="mt-3 btn btn-outline border-1 border-pink-500 px-2  hover:bg-pink-700 hover:text-white">Log Out</button></div> : <div className="flex items-center gap-3"><li><NavLink to='/auth/register'>Register(C)</NavLink></li>
+                                        <li><NavLink to='/auth/login'>Login(C)</NavLink></li>
+                                    </div>
+              }
           </ul>
         </div>
         
