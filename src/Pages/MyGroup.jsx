@@ -1,15 +1,39 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router";
-
+import Swal from "sweetalert2";
 const MyGroup = () => {
   const myGroupData = useLoaderData();
-// const {_id,,,description,,,imageUrl,}=singleGroup;
+  // const {_id,,,description,,,imageUrl,}=singleGroup;
 
+//   console.log("my group data ", myGroupData);
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:3000/groups/${id}`,{
+            method:'DELETE'
+        })
+        .then((res)=>res.json())
+        .then((data)=>{
+            if(data.deletedCount){
+            Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success",
+            });
+            }
+        })
 
-  console.log("my group data ", myGroupData);
-  const handleDelete=()=>{
-
-  }
+      }
+    });
+  };
   return (
     <div>
       <div className="title-img text-center container mx-auto">
@@ -45,8 +69,7 @@ const MyGroup = () => {
                           />
                         </div>
                       </div>
-                      <div>
-                      </div>
+                      <div></div>
                     </div>
                   </td>
                   <td>{group?.groupName}</td>
@@ -56,13 +79,17 @@ const MyGroup = () => {
                   <td>{group?.meetingLocation}</td>
                   <td>{group?.startDate}</td>
                   <th>
-                    
-                    <Link to={`/update-group/${group._id}`} className="btn btn-xs">Update</Link>
+                    <Link
+                      to={`/update-group/${group._id}`}
+                      className="mr-3 btn-warning text-black font-bold btn btn-xs"
+                    >
+                      Update
+                    </Link>
                     <button
                       onClick={() => handleDelete(group._id)}
-                      className="btn btn-xs"
+                      className="btn btn-xs btn-error text-black font-bold"
                     >
-                      X
+                      Delete
                     </button>
                   </th>
                 </tr>
