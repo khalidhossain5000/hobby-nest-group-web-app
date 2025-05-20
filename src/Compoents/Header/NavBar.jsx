@@ -6,10 +6,10 @@ const NavBar = () => {
   const {user,logOutUser}=use(AuthContext)
   console.log(user);
     const links=<>
-            <li><NavLink>Home</NavLink></li>
-            <li><NavLink>All Groups</NavLink></li>
-            <li><NavLink>Create Group(P)</NavLink></li>
-            <li><NavLink>My Group(P)</NavLink></li>
+            <li><NavLink to='/'>Home</NavLink></li>
+            <li><NavLink to='/create-group'>Create Group(P)</NavLink></li>
+            <li><NavLink to='/all-group'>All Groups</NavLink></li>
+            <li><NavLink to='/my-group'>My Group(P)</NavLink></li>
 
     </>
     const handleLogOut=()=>{
@@ -61,7 +61,7 @@ const NavBar = () => {
                 {links}
                
              {
-              user ? <div className="flex items-center gap-3 hover:bg-red-900"><img title={`${user.displayName}`} className={'w-22 h-22 rounded-full cursor-pointer ' } src={user.photoURL} alt="" /> <button onClick={handleLogOut} className="mt-3 btn btn-outline border-1 border-pink-500 px-2  hover:bg-pink-700 hover:text-white">Log Out</button></div> : <div className="flex items-center gap-3"><li><NavLink to='/auth/register'>Register(C)</NavLink></li>
+              user ? <div className="flex items-center gap-3 tooltip tooltip-bottom" data-tip={`${user.displayName}`}><img className='w-22 h-22 rounded-full cursor-pointer tooltip' data-tip="tdaisy tip"  src={user.photoURL} alt="" /> <button onClick={handleLogOut} className="mt-3 btn btn-outline border-1 border-pink-500 px-2  hover:bg-pink-700 hover:text-white">Log Out</button></div> : <div className="flex items-center gap-3"><li><NavLink to='/auth/register'>Register(C)</NavLink></li>
                                         <li><NavLink to='/auth/login'>Login(C)</NavLink></li>
                                     </div>
               }

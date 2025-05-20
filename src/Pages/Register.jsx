@@ -1,15 +1,23 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { Link } from 'react-router';
 import { AuthContext } from '../Provider/AuthContext';
 
 const Register = () => {
     const {createUser,updateUserProfile,user,setUser}=use(AuthContext)
+    const [passwordError, setPasswordError] = useState('');
     const handleRegister=e=>{
         e.preventDefault();
         const form=e.target;
         const formData=new FormData(form);
         const {email,password,name,photo}=Object.fromEntries(formData.entries())
-        console.log(email,password,name,photo);
+        setPasswordError("")
+        // password validation start
+        const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
+        if (passwordPattern.test(password) == false) {
+            setPasswordError("Password Length must be at least 6 characters And Must have an Uppercase and a Lowercase letter");
+            return;
+        }
+        // password validation end
         // FIREBASE USER 
         createUser(email,password)
         .then((result)=>{
@@ -64,11 +72,11 @@ const Register = () => {
                                 <a className="text-left text-[16px] link link-hover text-pink-300">Forgot password?</a>
                             </div>
                             {/* password error */}
-                            {/* <div className='py-2 w-9/12'>
+                             <div className='py-2 w-9/12'>
                                 {
                                     passwordError && <h2 className='text-red-600 text-xl '>{passwordError}</h2>
                                 }
-                            </div> */}
+                            </div> 
                             <button className="btn w-9/12 bg-[#011133] p-8 border-pink-300 text-xl text-pink-100 rounded-xl mt-4 hover:bg-gradient-to-bl hover:from-[#e050de] hover:to-[#5b04ed] transition duration-700">Register</button>
                         </form>
                         {/* social login start */}
