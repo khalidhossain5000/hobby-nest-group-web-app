@@ -9,6 +9,7 @@ import MyGroup from "../Pages/MyGroup";
 import AllGroup from "../Pages/AllGroup";
 import GroupDetails from "../Pages/GroupDetails";
 import UpdateGroup from "../Pages/UpdateGroup";
+import ErrorPageGlobal from "../Pages/ErrorPageGlobal";
 
 export const router = createBrowserRouter([
   {
@@ -59,4 +60,8 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path:'*',
+    Component:ErrorPageGlobal
+  }
 ]);
