@@ -7,6 +7,7 @@ import Register from "../Pages/Register";
 import CreateGroup from "../Pages/CreateGroup";
 import MyGroup from "../Pages/MyGroup";
 import AllGroup from "../Pages/AllGroup";
+import GroupDetails from "../Pages/GroupDetails";
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +28,11 @@ export const router = createBrowserRouter([
     path: "all-group",
     element: <AllGroup />,
     loader:()=>fetch('http://localhost:3000/groups')
+  },
+  {
+    path:'all-group/:id',
+    loader:({params})=>fetch(`http://localhost:3000/groups/${params.id}`),
+    element:<GroupDetails/>
   },
   {
     path: "my-group",

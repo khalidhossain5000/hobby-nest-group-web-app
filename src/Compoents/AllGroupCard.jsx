@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router";
 
 const AllGroupCard = ({ singleGroup }) => {
-  const {groupName,category,description,meetingLocation,maxNumber,imageUrl,startDate}=singleGroup;
+  const {_id,groupName,category,description,meetingLocation,maxNumber,imageUrl,startDate}=singleGroup;
   return (
    
       <div className="card bg-base-100 w-96 shadow-sm">
@@ -28,7 +29,7 @@ const AllGroupCard = ({ singleGroup }) => {
             
           </div>
           <div className="w-full">
-            <button className="btn btn-primary w-full ">See More</button>
+            <Link to={`/all-group/${_id}`} className="btn btn-primary w-full" >See More</Link>
           </div>
         </div>
       </div>
