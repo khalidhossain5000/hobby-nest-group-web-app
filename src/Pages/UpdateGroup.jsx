@@ -4,16 +4,44 @@ import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../Provider/AuthContext";
 import { useLoaderData } from "react-router";
 const UpdateGroup = () => {
+    const singleGroupData=useLoaderData()
+    const {groupName,category,description,meetingLocation,maxNumber,imageUrl,_id}=singleGroupData;
     const [startDate, setStartDate] = useState(null);
       const { user } = use(AuthContext);
-    //   const email=user?.email;
-    const singleGroupData=useLoaderData()
-    const {groupName,category,description,meetingLocation,maxNumber,imageUrl}=singleGroupData
+      const email=user?.email;
+      if(!email) return;
+    const handleUpdateGroup=e=>{
+        e.preventDefault();
+        const form=e.target;
+        const formData=new FormData(form)
+        const updatedInfo=Object.fromEntries(formData.entries())
+
+        const updatedGroup={
+            ...updatedInfo,
+            email
+        }
+
+    //Update to db 
+    fetch(`http://localhost:3000/groups/${_id}`,{
+        method:"PUT",
+        headers:{
+            'content-type':'application/json'
+        },
+        body:JSON.stringify(updatedGroup)
+    })
+    .then((res)=>res.json())
+    .then((data)=>{
+        alert("Group Updated")
+        console.log("Data after update",data);
+    })
+        
+        
+    }
   return (
     <div>
       <h2 className="text-center text-3xl font-bold">Update page</h2>
       <section className="form-full p-24 ">
-        <form>
+        <form onSubmit={handleUpdateGroup}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
               <label className="label">Group Name</label>
