@@ -117,7 +117,7 @@ const CreateGroup = () => {
                   Start Date (deadline equivalent)
                 </label>
 
-                <fieldset className="bg-transparent fieldset rounded-box border border-pink-300">
+                <fieldset className="bg-transparent fieldset rounded-box border border-pink-300 px-2">
                   <DatePicker
                     selected={startDate}
                     onChange={(date) => setStartDate(date)}

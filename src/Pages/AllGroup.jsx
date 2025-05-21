@@ -5,6 +5,7 @@ import AllGroupCard from "../Compoents/AllGroupCard";
 
 const AllGroup = () => {
     const allGroupData=useLoaderData()
+    console.log(allGroupData);
   return (
     <div>
       <header className="">

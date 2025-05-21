@@ -3,9 +3,7 @@ import { Link, useLoaderData } from "react-router";
 import Swal from "sweetalert2";
 const MyGroup = () => {
   const myGroupData = useLoaderData();
-  // const {_id,,,description,,,imageUrl,}=singleGroup;
 
-//   console.log("my group data ", myGroupData);
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",

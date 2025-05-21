@@ -16,7 +16,7 @@ const OtherPageNavBar = () => {
         <NavLink to="/all-group">All Groups</NavLink>
       </li>
       <li>
-        <NavLink to="/my-group">My Group(P)</NavLink>
+        <li><NavLink to={`/my-group/${user?.email}`}>My Group(P)</NavLink></li>
       </li>
     </>
   );
