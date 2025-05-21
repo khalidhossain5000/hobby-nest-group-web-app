@@ -1,11 +1,12 @@
 import React, { use, useState } from 'react';
-import { Link, useNavigate } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthContext';
 import bgImg from '../assets/authbg/sky-dar.jpg'
 const Register = () => {
     const {createUser,updateUserProfile,user,setUser,handleGoogleUser}=use(AuthContext)
     const [passwordError, setPasswordError] = useState('');
     const navigate=useNavigate()
+    const registerLocation = useLocation();
     const handleRegister=e=>{
         e.preventDefault();
         const form=e.target;
@@ -33,7 +34,8 @@ const Register = () => {
                 alert("updated error")
                 console.log(error);
             })
-            navigate('/')
+            // navigate('/')
+             navigate(`${registerLocation.state?.from || "/"}`,{replace:true} );
         })
         .catch((error)=>{
             alert("error occured")

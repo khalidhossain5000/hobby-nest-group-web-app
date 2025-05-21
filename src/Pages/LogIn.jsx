@@ -1,9 +1,12 @@
 import React, { use } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthContext';
 import bgImg from '../assets/authbg/sky-dar.jpg'
 const LogIn = () => {
     const {logInUser,handleGoogleUser}=use(AuthContext);
+    const logInLocation = useLocation();
+    const navigate=useNavigate()
+
     const handleLogin=e=>{
         e.preventDefault();
         const form=e.target;
@@ -15,6 +18,8 @@ const LogIn = () => {
         .then((result)=>{
             alert("log in success")
             console.log(result);
+            // navigate(`${logInLocation.state ? logInLocation.state : "/"}`);
+             navigate(`${logInLocation.state?.from || "/"}`,{replace:true} );
         })
         .catch((error)=>{
             alert("error occured")
@@ -26,6 +31,8 @@ const LogIn = () => {
         .then((result)=>{
             alert("google user logged in")
             console.log("google info",result);
+            navigate(`${logInLocation.state ? logInLocation.state : "/"}`,{replace:true} );
+            console.log(result);
         })
         .then((error)=>{
         const errorCode = error.code;
@@ -81,7 +88,7 @@ const LogIn = () => {
                         </div>
                         {/* DONT HAVE ACCOUNT START HERE*/}
                         <div>
-                            <h5 className='w-full mx-auto text-2xl text-gray-300'>Don't have an account? <Link  to='/auth/register' className='text-pink-600 font-bold'>Register</Link> Here</h5>
+                            <h5 className='w-full mx-auto text-2xl text-gray-300'>Don't have an account? <Link state={{from:logInLocation.state?.from || '/auth/my-profile'}} to='/auth/register' className='text-pink-600 font-bold'>Register</Link> Here</h5>
                         </div>
                     </div>
                 </div>

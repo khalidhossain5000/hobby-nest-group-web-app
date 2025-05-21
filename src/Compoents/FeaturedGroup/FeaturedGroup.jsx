@@ -6,7 +6,7 @@ const allGroupPromise=fetch('http://localhost:3000/groups/').then((res)=>res.jso
 const FeaturedGroup = () => {
     const allGroupData=use(allGroupPromise)
     const featuredGroupData=allGroupData.slice(0,6);
-    console.log(featuredGroupData);
+    // console.log(featuredGroupData);
     return (
         <div className='py-24'>
             <h1 className='text-6xl font-bold text-center py-12'>Featured Group</h1>
