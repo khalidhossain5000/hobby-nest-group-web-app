@@ -65,7 +65,11 @@ const NavBar = () => {
                 {links}
                
              {
-              user ? <div className="flex items-center gap-3 tooltip tooltip-bottom" data-tip={`${user.displayName}`}><img className='w-22 h-22 rounded-full cursor-pointer tooltip' data-tip="tdaisy tip"  src={user.photoURL} alt="" /> <button onClick={handleLogOut} className="mt-3 btn btn-outline border-1 border-pink-500 px-2  hover:bg-pink-700 hover:text-white">Log Out</button></div> : <div className="flex items-center gap-3"><li><NavLink to='/auth/register'>Register(C)</NavLink></li>
+              user ? <div className="flex items-center gap-3">
+                <div className="tooltip tooltip-bottom" data-tip={`${user.displayName}`}>
+                  <img className='w-22 h-22 rounded-full cursor-pointer' src={user.photoURL} alt="" /> 
+                </div>
+                <button onClick={handleLogOut} className="mt-3 btn btn-outline border-1 border-pink-500 px-2  hover:bg-pink-700 hover:text-white">Log Out</button></div> : <div className="flex items-center gap-3"><li><NavLink to='/auth/register'>Register(C)</NavLink></li>
                                         <li><NavLink to='/auth/login'>Login(C)</NavLink></li>
                                     </div>
               }

@@ -12,7 +12,6 @@ import UpdateGroup from "../Pages/UpdateGroup";
 import ErrorPageGlobal from "../Pages/ErrorPageGlobal";
 import PrivateRoute from "../Provider/PrivateRoute";
 import Loading from "../Compoents/Loading/Loading";
-import { PacmanLoader } from "react-spinners";
 
 export const router = createBrowserRouter([
   {
@@ -39,7 +38,7 @@ export const router = createBrowserRouter([
     path:'all-group/:id',
     loader:({params})=>fetch(`http://localhost:3000/groups/${params.id}`),
     element:<GroupDetails/>,
-    hydrateFallbackElement:<PacmanLoader/>
+    hydrateFallbackElement:<Loading></Loading>
   },
   {
     path: "my-group/:email",
