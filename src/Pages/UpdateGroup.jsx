@@ -40,7 +40,7 @@ const UpdateGroup = () => {
         
     }
   return (
-    <div>
+    <div className="bg-[#111827]">
       <header>
         <NavBar/>
       </header>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router";
 import Swal from "sweetalert2";
+import OtherPageNavBar from "../Compoents/Header/OtherPageNavBar";
 const MyGroup = () => {
   const myGroupData = useLoaderData();
 
@@ -33,35 +34,40 @@ const MyGroup = () => {
     });
   };
   return (
-    <div>
-      <div className="title-img text-center container mx-auto">
+    <div className="">
+      <header>
+        <OtherPageNavBar/>
+      </header>
+      <main className="bg-gradient-to-br from-[#0d0518] via-[#3c0648] to-[#600e8c]">
+        <div className="text-[#feedff] container mx-auto text-center text-6xl font-bold py-16 ">
         <h2>My Group</h2>
-        <div>
-          <table className="table">
+        <div className="mt-16">
+          <table className="table border-1 border-pink-600">
             {/* head */}
-            <thead>
-              <tr>
-                <th>No</th>
-                <th>Group Image</th>
-                <th>Group Name</th>
-                <th>Description</th>
-                <th>category</th>
-                <th>Max Number</th>
-                <th>Meeting Location</th>
-                <th>startDate</th>
-                <th>Actions</th>
+            <thead className="">
+              <tr className="border-b-1 border-b-pink-600 text-[#feeeff] text-xl font-normal">
+                <th className="">No</th>
+                <th className="border-x-1 border-x-pink-300">Group Image</th>
+                <th className="border-x-1 border-x-pink-300">Group Name</th>
+                <th className="border-x-1 border-x-pink-300">Description</th>
+                <th className="border-x-1 border-x-pink-300">Category</th>
+                <th className="border-x-1 border-x-pink-300">Max Number</th>
+                <th className="border-x-1 border-x-pink-300">Meeting Location</th>
+                <th className="border-x-1 border-x-pink-300">StartDate</th>
+                <th className="border-x-1 border-x-pink-300">Actions</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="">
               {/* row 1 */}
               {myGroupData.map((group, index) => (
-                <tr key={group._id}>
+                <tr className="border-b-1 border-b-pink-600 border-r-1 text-[17px] font-normal" key={group._id}>
                   <th>{index + 1}</th>
-                  <td>
+                  <td className="border-x-1 border-x-pink-300">
                     <div className="flex items-center gap-3">
                       <div className="avatar">
-                        <div className="mask mask-squircle h-12 w-12">
+                        <div className="mask rounded-2xl h-12 w-12 lg:w-20 lg:h-20">
                           <img
+                            className=""
                             src={group.imageUrl}
                             alt="Avatar Tailwind CSS Component"
                           />
@@ -70,25 +76,27 @@ const MyGroup = () => {
                       <div></div>
                     </div>
                   </td>
-                  <td>{group?.groupName}</td>
-                  <td>{group?.description}</td>
-                  <td>{group?.category}</td>
-                  <td>{group?.maxNumber}</td>
-                  <td>{group?.meetingLocation}</td>
-                  <td>{group?.startDate}</td>
+                  <td className="border-x-1 border-x-pink-300">{group?.groupName}</td>
+                  <td className="border-x-1 border-x-pink-300">{group?.description}</td>
+                  <td className="border-x-1 border-x-pink-300">{group?.category}</td>
+                  <td className="border-x-1 border-x-pink-300">{group?.maxNumber}</td>
+                  <td className="border-x-1 border-x-pink-300">{group?.meetingLocation}</td>
+                  <td className="border-x-1 border-x-pink-300">{group?.startDate}</td>
                   <th>
-                    <Link
+                    <div className="space-y-3">
+                      <Link
                       to={`/update-group/${group._id}`}
-                      className="mr-3 btn-warning text-black font-bold btn btn-xs"
+                      className="btn-warning text-black font-bold btn btn-xs w-full"
                     >
                       Update
                     </Link>
                     <button
                       onClick={() => handleDelete(group._id)}
-                      className="btn btn-xs btn-error text-black font-bold"
+                      className="btn btn-xs btn-error text-black font-bold w-full"
                     >
                       Delete
                     </button>
+                    </div>
                   </th>
                 </tr>
               ))}
@@ -96,6 +104,7 @@ const MyGroup = () => {
           </table>
         </div>
       </div>
+      </main>
     </div>
   );
 };

@@ -31,7 +31,7 @@ const OtherPageNavBar = () => {
       });
   };
   return (
-    <div className=" top-0 left-0 w-full bg-gray-300 text-black ">
+    <div className=" w-full bg-gradient-to-r from-[#8e008e] via-[#ff69b4] to-[#be185d] text-black ">
       <div className="navbar container mx-auto ">
         <div className="flex items-center justify-between w-full lg:navbar-start">
           <div className="dropdown">
@@ -68,13 +68,10 @@ const OtherPageNavBar = () => {
             {links}
 
             {user ? (
-              <div className="flex items-center gap-3 hover:bg-red-900">
-                <img
-                  title={`${user.displayName}`}
-                  className={"w-22 h-22 rounded-full cursor-pointer "}
-                  src={user.photoURL}
-                  alt=""
-                />{" "}
+              <div className="flex items-center gap-3">
+                <div className="tooltip tooltip-bottom" data-tip={`${user.displayName}`}>
+                  <img className='w-22 h-22 rounded-full cursor-pointer' src={user.photoURL} alt="" /> 
+                </div>
                 <button
                   onClick={handleLogOut}
                   className="mt-3 btn btn-outline border-1 border-pink-500 px-2  hover:bg-pink-700 hover:text-white"
