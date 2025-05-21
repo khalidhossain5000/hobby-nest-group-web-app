@@ -68,8 +68,7 @@ const CreateGroup = () => {
                 <label className="label text-pink-100 text-2xl pb-3">Select Hobby Category</label>
                 <select
                   name="category"
-                  
-                  
+
                   className="w-full shadow-2xl bg-transparent text-black font-semibold border-2 border-pink-500 py-3 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl"
                 >
                   {/* <option disabled={true}>Hobby Category</option> */}
@@ -89,7 +88,7 @@ const CreateGroup = () => {
                 <textarea
                   name="description"
                   placeholder="Description"
-                  className="w-full textarea textarea-xs input shadow-2xl bg-transparent text-pink-100 border-2 border-pink-500 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl"
+                  className="w-full textarea textarea-xs input shadow-2xl bg-transparent text-pink-100 border-2 border-pink-500 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 !text-xl"
                   
                 ></textarea>
               </fieldset>
@@ -99,7 +98,7 @@ const CreateGroup = () => {
                   type="text"
                   name="meetingLocation"
                   className="input w-full shadow-2xl bg-transparent text-pink-100 border-2 border-pink-500 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl"
-                  defaultValue="enter a meeting locaitons"
+                  
                   placeholder="Meeting Location"
                 />
               </fieldset>

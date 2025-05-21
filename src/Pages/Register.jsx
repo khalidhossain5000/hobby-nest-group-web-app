@@ -45,8 +45,21 @@ const Register = () => {
     const handleGoogleRegister=()=>{
          handleGoogleUser()
         .then((result)=>{
+            const user=result.user;
             alert("google user logged in")
-            console.log("google info",result);
+            const name = user.displayName;
+            const photo = user.photoURL;
+            //update user profile
+            updateUserProfile({ displayName: name, photoURL: photo })
+                .then(() => {
+                    setUser({ ...user, displayName: name, photoURL: photo })
+                })
+                .catch((error) => {
+                    console.log(error);
+                    setUser(user);
+                 });
+            
+         navigate(`${registerLocation.state?.from || "/"}`,{replace:true} );
         })
         .then((error)=>{
         const errorCode = error.code;

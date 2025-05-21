@@ -31,7 +31,8 @@ const LogIn = () => {
         .then((result)=>{
             alert("google user logged in")
             console.log("google info",result);
-            navigate(`${logInLocation.state ? logInLocation.state : "/"}`,{replace:true} );
+            // navigate(`${logInLocation.state ? logInLocation.state : "/"}`,{replace:true} );
+            navigate(`${logInLocation.state?.from || "/"}`,{replace:true} );
             console.log(result);
         })
         .then((error)=>{
