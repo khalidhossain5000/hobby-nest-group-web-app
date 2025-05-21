@@ -1,10 +1,11 @@
 import React, { use, useState } from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthContext';
-
+import bgImg from '../assets/authbg/sky-dar.jpg'
 const Register = () => {
     const {createUser,updateUserProfile,user,setUser,handleGoogleUser}=use(AuthContext)
     const [passwordError, setPasswordError] = useState('');
+    const navigate=useNavigate()
     const handleRegister=e=>{
         e.preventDefault();
         const form=e.target;
@@ -32,7 +33,7 @@ const Register = () => {
                 alert("updated error")
                 console.log(error);
             })
-
+            navigate('/')
         })
         .catch((error)=>{
             alert("error occured")
@@ -52,41 +53,41 @@ const Register = () => {
         })
     }
     return (
-        <div>
-            <div className='py-24 bg-gradient-to-b from-[#000626] to-[#0e315b]'>
+        <div style={{backgroundImage:`url(${bgImg})`}} className="py-16 bg-no-repeat bg-cover bg-top">
+            <div className='py-24'>
             {/* <div className="dynamic-title">
                 <Helmet>
                     <title>Register</title>
                 </Helmet>
             </div> */}
             <div className="container mx-auto">
-                <div className="title text-center space-y-2 py-6">
+                <div className="title text-center space-y-2 py-12">
 
-                    <h1 className='text-3xl font-bold text-[#c0b4d1]'>Register Your Account Now</h1>
+                    <h1 className='text-6xl font-bold text-[#fffaff]'>Register Your Account Now</h1>
                     <h5 className='text-xl font-semibold text-gray-300 my-6'>Please enter your details to Register.</h5>
                 </div>
-                <div className="card bg-[#000728] w-full max-w-7xl mx-auto shrink-0 shadow-2xl py-16">
+                <div className="card w-full max-w-3xl mx-auto inset-shadow-3xl inset-shadow-indigo-500 py-16 border-1 border-pink-100 bg-transparent rounded-2xl ">
                     <div className="card-body">
-                        <form onSubmit={handleRegister} className='flex flex-col justify-center items-center'>
-                            <label className="w-9/12 text-left label text-xl text-pink-300">Name</label><br />
-                            <input name='name' type="text" className=" input w-9/12 bg-[#011133] border border-pink-300 rounded-xl p-8 text-white placeholder:text-pink-200 placeholder:text-xl" placeholder="Name" /><br />
-                            <label className="w-9/12 text-left label text-xl text-pink-300">Photo Url</label><br />
-                            <input name='photo' type="text" className=" input w-9/12 bg-[#011133] border border-pink-300 rounded-xl p-8 text-white placeholder:text-pink-200 placeholder:text-xl" placeholder="Photo Url" /><br />
-                            <label className="w-9/12 text-left label text-xl text-pink-300">Email</label><br />
-                            <input name='email' type="email" className=" input w-9/12 bg-[#011133] border border-pink-300 rounded-xl p-8 text-white placeholder:text-pink-200 placeholder:text-xl" placeholder="Email" /><br />
+                        <form onSubmit={handleRegister} className='flex flex-col justify-center items-center px-6'>
+                            <label className="w-full text-left label text-2xl text-white font-semibold">Name</label><br />
+                            <input name='name' type="text" className=" input w-full bg-transparent border border-[#fffeff] rounded-xl p-8 text-white placeholder:text-pink-100 placeholder: focus:border-pink-500 text-xl" placeholder="Enter Your Name" /><br />
+                            <label className="w-full text-left label text-2xl text-white font-semibold">Photo Url</label><br />
+                            <input name='photo' type="text" className=" input w-full bg-transparent border border-[#fffeff] rounded-xl p-8 text-white placeholder:text-pink-100 placeholder: focus:border-pink-500 text-xl" placeholder="Enter Photo Url" /><br />
+                            <label className="w-full text-left label text-2xl text-white font-semibold">Email</label><br />
+                            <input name='email' type="email" className=" input w-full bg-transparent border border-[#fffeff] rounded-xl p-8 text-white placeholder:text-pink-100 placeholder: focus:border-pink-500 text-xl" placeholder="Enter Your Email" /><br />
 
-                            <label className="w-9/12 text-left label text-xl text-pink-300">Password</label><br />
-                            <input name='password' type="password" className="input w-9/12 bg-[#011133] border border-pink-300 rounded-xl p-8 text-white placeholder:text-pink-200 placeholder:text-xl" placeholder="Password" />
-                            <div className='pt-3 w-9/12'>
-                                <a className="text-left text-[16px] link link-hover text-pink-300">Forgot password?</a>
+                            <label className="text-left w-full label text-2xl text-white font-semibold">Password</label><br />
+                            <input name='password' type="password" className=" input w-full bg-transparent border border-[#fffeff] rounded-xl p-8 text-white placeholder:text-pink-100 placeholder: focus:border-pink-500 text-xl" placeholder="Enter Password" />
+                            <div className='pt-3 w-full'>
+                                <a className="text-left text-[25px] link link-hover text-pink-200">Forgot password?</a>
                             </div>
                             {/* password error */}
-                             <div className='py-2 w-9/12'>
+                             <div className='py-2 w-full'>
                                 {
                                     passwordError && <h2 className='text-red-600 text-xl '>{passwordError}</h2>
                                 }
                             </div> 
-                            <button className="btn w-9/12 bg-[#011133] p-8 border-pink-300 text-xl text-pink-100 rounded-xl mt-4 hover:bg-gradient-to-bl hover:from-[#e050de] hover:to-[#5b04ed] transition duration-700">Register</button>
+                            <button className="btn w-full bg-transparent p-8 border-pink-300 text-xl text-pink-100 rounded-xl mt-4 hover:bg-gradient-to-br hover:from-[#07233c] hover:via-[#092b41] hover:to-[#5bc0c7] transition duration-700">Register</button>
                         </form>
                         {/* social login start */}
                         <div className="border-t border-[#fce7f350] py-3 mt-5 social-login w-full flex flex-col items-center justify-center">
@@ -99,7 +100,7 @@ const Register = () => {
                         </div>
                         {/* DONT HAVE ACCOUNT START HERE*/}
                         <div>
-                            <h5 className='w-9/12 mx-auto text-xl text-gray-300'>Already have an account? <Link to='/auth/login' className='text-pink-600 font-bold'>Login</Link> Here</h5>
+                            <h5 className='w-full mx-auto text-2xl font-bold mt-6 text-gray-300'>Already have an account? <Link to='/auth/login' className='text-pink-500 text-3xl font-bold'>Login</Link> Here</h5>
                         </div>
                     </div>
                 </div>
