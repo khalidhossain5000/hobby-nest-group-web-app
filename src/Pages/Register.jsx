@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { AuthContext } from '../Provider/AuthContext';
 
 const Register = () => {
-    const {createUser,updateUserProfile,user,setUser}=use(AuthContext)
+    const {createUser,updateUserProfile,user,setUser,handleGoogleUser}=use(AuthContext)
     const [passwordError, setPasswordError] = useState('');
     const handleRegister=e=>{
         e.preventDefault();
@@ -40,7 +40,16 @@ const Register = () => {
         })
     }
     const handleGoogleRegister=()=>{
-
+         handleGoogleUser()
+        .then((result)=>{
+            alert("google user logged in")
+            console.log("google info",result);
+        })
+        .then((error)=>{
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(error,errorCode,errorMessage);
+        })
     }
     return (
         <div>

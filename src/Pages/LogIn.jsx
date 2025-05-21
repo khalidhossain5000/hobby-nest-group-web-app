@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { AuthContext } from '../Provider/AuthContext';
 
 const LogIn = () => {
-    const {logInUser}=use(AuthContext);
+    const {logInUser,handleGoogleUser}=use(AuthContext);
     const handleLogin=e=>{
         e.preventDefault();
         const form=e.target;
@@ -22,10 +22,20 @@ const LogIn = () => {
         })
     }
     const handleGoogleLogin=()=>{
-
+        handleGoogleUser()
+        .then((result)=>{
+            alert("google user logged in")
+            console.log("google info",result);
+        })
+        .then((error)=>{
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(error,errorCode,errorMessage);
+        })
     }
     return (
         <div>
+            
             <div className='py-24 bg-gradient-to-b from-[#000626] to-[#0e315b]'>
             {/* <div className="dynamic-title">
                 <Helmet>

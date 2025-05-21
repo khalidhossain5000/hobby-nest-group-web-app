@@ -10,6 +10,7 @@ import AllGroup from "../Pages/AllGroup";
 import GroupDetails from "../Pages/GroupDetails";
 import UpdateGroup from "../Pages/UpdateGroup";
 import ErrorPageGlobal from "../Pages/ErrorPageGlobal";
+import PrivateRoute from "../Provider/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -24,7 +25,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "create-group",
-    element: <CreateGroup />,
+    element: <PrivateRoute><CreateGroup /></PrivateRoute>,
   },
   {
     path: "all-group",
@@ -39,7 +40,7 @@ export const router = createBrowserRouter([
   {
     path: "my-group/:email",
     loader:({params})=>fetch(`http://localhost:3000/all-groups/${params.email}`),
-    element: <MyGroup />,
+    element: <PrivateRoute><MyGroup /></PrivateRoute>,
   },
   {
     path:'update-group/:id',
