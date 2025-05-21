@@ -87,13 +87,13 @@ const Register = () => {
                                     passwordError && <h2 className='text-red-600 text-xl '>{passwordError}</h2>
                                 }
                             </div> 
-                            <button className="btn w-full bg-transparent p-8 border-pink-300 text-xl text-pink-100 rounded-xl mt-4 hover:bg-gradient-to-br hover:from-[#07233c] hover:via-[#092b41] hover:to-[#5bc0c7] transition duration-700">Register</button>
+                            <button className="btn w-full bg-transparent p-8 border-pink-300 text-xl text-pink-100 rounded-xl mt-4 hover:bg-gradient-to-br hover:from-[#07233c] hover:via-[#1cc0de] hover:to-[#020611] transition duration-700">Register</button>
                         </form>
                         {/* social login start */}
                         <div className="border-t border-[#fce7f350] py-3 mt-5 social-login w-full flex flex-col items-center justify-center">
                             <h2 className='border-b border-[#fce7f350] w-full text-center border[#fce7f350] pb-5 text-2xl font-bold text-gray-300'>Or</h2>
                             {/* Google */}
-                            <button onClick={handleGoogleRegister} className="mt-5 w-9/12 mx-auto btn bg-white text-black border-[#e5e5e5] text-xl p-8 rounded-xl">
+                            <button onClick={handleGoogleRegister} className="mt-5 w-full mx-auto btn bg-white text-black border-[#e5e5e5] text-xl p-8 rounded-xl">
                                 <svg aria-label="Google logo" width="26" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g><path d="m0 0H512V512H0" fill="#fff"></path><path fill="#34a853" d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341"></path><path fill="#4285f4" d="m386 400a140 175 0 0053-179H260v74h102q-7 37-38 57"></path><path fill="#fbbc02" d="m90 341a208 200 0 010-171l63 49q-12 37 0 73"></path><path fill="#ea4335" d="m153 219c22-69 116-109 179-50l55-54c-78-75-230-72-297 55"></path></g></svg>
                                 Register with Google
                             </button>
