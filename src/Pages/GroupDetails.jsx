@@ -60,6 +60,33 @@ const GroupDetails = () => {
               </div>
             </div>
           </div>
+          
+
+
+        <div className="join-grp">
+
+          {
+            new Date(startDate) < new Date() ? <><h5 className="mt-6 text-center text-pink-200 text-6xl py-12">
+            !Opps the group is no longer active.
+          </h5></> : <div className="text-center "><button className="my-12 w-8/12 text-3xl btn bg-gradient-to-t from-[#b80af5] via-[#55077a] to-[#1e0630] text-pink-100 hover:shadow-2xl hover:shadow-purple-200 cursor-pointer border-1 border-pink-500 p-12  hover:bg-pink-700 hover:text-white">Join Group</button></div>
+          }
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
         </div>
       </main>
       <footer>

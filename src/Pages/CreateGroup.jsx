@@ -3,7 +3,6 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../Provider/AuthContext";
 // import bgImg from '../assets/groupBg/evening-ii.jpg'
-
 import bgImg from '../assets/groupBg/nmntan-ik.jpg'
 import NavBar from "../Compoents/Header/NavBar";
 import Footer from "../Compoents/Footer/Footer";
@@ -120,8 +119,11 @@ const CreateGroup = () => {
                 <fieldset className="bg-transparent fieldset rounded-box border border-pink-300 px-2">
                   <DatePicker
                     selected={startDate}
-                    onChange={(date) => setStartDate(date)}
-                    minDate={new Date()}
+                    onChange={(date) => {
+                      const formattedDate=date.toISOString().split('T')[0]
+                      setStartDate(formattedDate)
+                    }}
+                    value={new Date()}
                     placeholderText="Select a date between today and 5 days in the future"
                     className="w-full py-3 text-white px-5gi text-xl font-bold"
                   />
