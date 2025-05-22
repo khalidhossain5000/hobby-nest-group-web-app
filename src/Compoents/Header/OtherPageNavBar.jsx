@@ -74,7 +74,7 @@ const OtherPageNavBar = () => {
                 </div>
                 <button
                   onClick={handleLogOut}
-                  className="mt-3 btn btn-outline border-1 border-pink-500 px-2  hover:bg-pink-700 hover:text-white"
+                  className="mt-3 btn bg-gradient-to-t from-[#b80af5] via-[#55077a] to-[#1e0630] text-pink-100 hover:shadow-2xl hover:shadow-purple-200 cursor-pointer border-1 border-pink-500 px-2  hover:bg-pink-700 hover:text-white"
                 >
                   Log Out
                 </button>

@@ -66,7 +66,7 @@ const NavBar = () => {
                 <div className="tooltip tooltip-bottom" data-tip={`${user.displayName}`}>
                   <img className='w-22 h-22 rounded-full cursor-pointer' src={user.photoURL} alt="" /> 
                 </div>
-                <button onClick={handleLogOut} className="mt-3 btn btn-outline border-1 border-pink-500 px-2  hover:bg-pink-700 hover:text-white">Log Out</button></div> : <div className="flex items-center gap-3"><li><NavLink to='/auth/register'>Register(C)</NavLink></li>
+                <button onClick={handleLogOut} className="mt-3 btn bg-gradient-to-t from-[#b80af5] via-[#55077a] to-[#1e0630] text-pink-100 hover:shadow-2xl hover:shadow-purple-200 cursor-pointer border-1 border-pink-500 px-2  hover:bg-pink-700 hover:text-white">Log Out</button></div> : <div className="flex items-center gap-3"><li><NavLink to='/auth/register'>Register(C)</NavLink></li>
                                         <li><NavLink to='/auth/login'>Login(C)</NavLink></li>
                                     </div>
               }
