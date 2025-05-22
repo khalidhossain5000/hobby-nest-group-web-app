@@ -12,27 +12,58 @@ const FeaturedGroupCard = ({ featureGroup }) => {
     startDate,
   } = featureGroup;
   return (
-    <div className="bg-red-300">
-      <div className="container mx-auto card bg-base-100 shadow-sm">
-        <figure>
-          <img src={`${imageUrl}`} alt="Shoes" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">{groupName}</h2>
-          <p className="overflow-y-scroll">{description}</p>
-          <div className="otherinfo">
-            <div>
-              <h3>{category}</h3>
-              <h3>{meetingLocation}</h3>
-            </div>
-            <div>
-              <h3>{maxNumber}</h3>
-              <h3>{startDate}</h3>
-            </div>
+
+      <div className="bg-gradient-to-br from-[#1171dd] via-[#200633] to-[#d72bba] border border-pink-300 shadow-lg shadow-purple-700 hover:shadow-2xl hover:shadow-purple-400">
+      <figure className="h-[250px]">
+        <img
+          className="w-full h-[250px] object-cover"
+          src={`${imageUrl}`}
+          alt="Group Image"
+        />
+      </figure>
+      <div className="p-3 lg:p-6">
+        <h2 className="text-center text-2xl lg:text-3xl font-bold text-white">
+          {groupName}
+        </h2>
+        <p className="text-xl text-white my-2 lg:my-4">
+          <span className="text-xl lg:text-2xl font-bold text-[#fffeff]">
+            Description
+          </span>{" "}
+          : {description.slice(0, 150)}
+        </p>
+        <div className="otherinfo">
+          <div className="text-xl text-white my-2 lg:my-4 space-y-2">
+            <h3>
+              <span className="mr-2 text-xl lg:text-2xl font-bold text-[#fffeff]">
+                Category
+              </span>
+              {category}
+            </h3>
+            <h3>
+              <span className="mr-2 text-xl lg:text-2xl font-bold text-[#fffeff]">
+                Meeting-Location:
+              </span>
+              {meetingLocation}
+            </h3>
+          </div>
+          <div className="text-xl text-white my-2 lg:my-4">
+            <h3>
+              <span className="text-xl lg:text-2xl font-bold text-[#fffeff] mr-2">
+                Max-Number:
+              </span>
+              {maxNumber}
+            </h3>
+            <h3>
+              <span className="text-xl lg:text-2xl font-bold text-[#fffeff] mr-2">
+                Start-Date:
+              </span>
+              {startDate}
+            </h3>
           </div>
         </div>
       </div>
     </div>
+
   );
 };
 

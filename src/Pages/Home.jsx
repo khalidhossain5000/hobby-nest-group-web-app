@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from '../Compoents/Slider/Slider';
 import FeaturedGroup from '../Compoents/FeaturedGroup/FeaturedGroup';
+import RadialGradient from '../Compoents/Bg-Gradient/RadialGradient';
 
 
 const Home = () => {
@@ -10,8 +11,9 @@ const Home = () => {
 
             <Slider></Slider>
 
-            <main>
+            <main className='container mx-auto relative'>
                 <FeaturedGroup></FeaturedGroup>
+                <RadialGradient></RadialGradient>
             </main>
         </div>
         

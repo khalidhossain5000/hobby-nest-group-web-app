@@ -41,8 +41,8 @@ const MyGroup = () => {
       <main className="bg-gradient-to-br from-[#0d0518] via-[#3c0648] to-[#600e8c]">
         <div className="text-[#feedff] container mx-auto text-center text-6xl font-bold py-16 ">
         <h2>My Group</h2>
-        <div className="mt-16">
-          <table className="table border-1 border-pink-600">
+        <div className="mt-16 overflow-x-auto">
+          <table className="table border-1 border-pink-600 table-auto">
             {/* head */}
             <thead className="">
               <tr className="border-b-1 border-b-pink-600 text-[#feeeff] text-xl font-normal">
