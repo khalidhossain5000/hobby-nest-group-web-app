@@ -18,21 +18,21 @@ const GroupDetails = () => {
         <OtherPageNavBar />
       </header>
       <main className="bg-gradient-to-br from-[#0d0518] via-[#3c0648] to-[#600e8c]">
-        <h1 className="text-[#feedff] text-center text-6xl font-bold py-12 lg:py-24 ">
+        <h1 className="text-[#feedff] text-center text-2xl md:text-3xl lg:text-6xl font-bold py-12 lg:py-24 ">
           Welcome To {groupName} Page
         </h1>
 
-        <div className="container mx-auto">
+        <div className="container mx-auto px-6 lg:px-0">
           <figure className="">
             <img
-              className="w-full h-[600px] rounded-xl shadow-2xl object-cover"
+              className="w-full lg:h-[600px] rounded-xl shadow-2xl object-cover"
               src={`${imageUrl}`}
               alt="Group Image"
             />
           </figure>
           <div className="content pb-6 lg:pb-16">
             <div className="title-des mt-6 pt-5 border-t-1 border-[#d950d150]">
-              <h3 className="text-center text-6xl font-bold text-[#eee0ff]">
+              <h3 className="text-center text-2xl md:text-3xl lg:text-6xl font-bold text-[#eee0ff]">
                 {groupName}
               </h3>
               <p className="text-[#eddffe] my-2 text-center text-2xl py-3 lg:pt-12">
