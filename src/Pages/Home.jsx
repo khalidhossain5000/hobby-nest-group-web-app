@@ -4,6 +4,7 @@ import FeaturedGroup from '../Compoents/FeaturedGroup/FeaturedGroup';
 import RadialGradient from '../Compoents/Bg-Gradient/RadialGradient';
 import PopularCategory from '../Compoents/PopularCategory/PopularCategory';
 import OurCommunity from '../Compoents/OurCommiunitySection/OurCommunity';
+import Footer from '../Compoents/Footer/Footer';
 
 
 const Home = () => {
@@ -19,6 +20,10 @@ const Home = () => {
                 <PopularCategory></PopularCategory>
                 <OurCommunity></OurCommunity>
             </main>
+            <footer>
+                <Footer></Footer>
+                
+            </footer>
         </div>
         
     );

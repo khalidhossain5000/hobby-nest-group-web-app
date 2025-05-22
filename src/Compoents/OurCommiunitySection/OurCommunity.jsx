@@ -8,13 +8,13 @@ import { RiEdgeNewLine } from "react-icons/ri";
 
 const OurCommunity = () => {
   return (
-    <div>
+    <div className="py-24">
       <Zoom>
         <h1 className="text-6xl font-bold text-pink-600 text-center pt-6 pb-12">
           Our Community In Numbers
         </h1>
       </Zoom>
-      <div className="space-y-6 lg:space-y-0 px-3 lg:px-0 py-6 lg:py-16 card-container lg:flex items-center justify-between w-full">
+      <div className="space-y-6 lg:space-y-0 px-3 lg:px-0 py-6 lg:py-20 card-container lg:flex items-center justify-between w-full">
         <div className="p-4 lg:p-6 rounded-2xl bg-gradient-to-br from-[#1171dd] via-[#200633] to-[#d72bba] border border-pink-300 shadow-lg shadow-purple-700 hover:shadow-2xl hover:shadow-purple-300">
             
             <div className="mx-auto text-center text-pink-200"><MdGroups3 style={{margin:'auto'}} size={90}/></div>
