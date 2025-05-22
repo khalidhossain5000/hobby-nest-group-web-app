@@ -1,6 +1,10 @@
 import React from "react";
 import { Zoom } from "react-awesome-reveal";
 import CountUp from "react-countup";
+import { MdGroups3 } from "react-icons/md";
+import { MdEmojiPeople } from "react-icons/md";
+import { BiSolidCategory } from "react-icons/bi";
+import { RiEdgeNewLine } from "react-icons/ri";
 
 const OurCommunity = () => {
   return (
@@ -10,9 +14,10 @@ const OurCommunity = () => {
           Our Community In Numbers
         </h1>
       </Zoom>
-      <div className="px-3 lg:px-0 py-6 lg:py-16 card-container lg:flex items-center justify-between w-full">
+      <div className="space-y-6 lg:space-y-0 px-3 lg:px-0 py-6 lg:py-16 card-container lg:flex items-center justify-between w-full">
         <div className="p-4 lg:p-6 rounded-2xl bg-gradient-to-br from-[#1171dd] via-[#200633] to-[#d72bba] border border-pink-300 shadow-lg shadow-purple-700 hover:shadow-2xl hover:shadow-purple-300">
-          {/* <img src={c1img} alt="" /> */}
+            
+            <div className="mx-auto text-center text-pink-200"><MdGroups3 style={{margin:'auto'}} size={90}/></div>
           <h2 className="text-[64px] font-extrabold text-center text-pink-100">
             <CountUp end={500} enableScrollSpy={true}></CountUp>+
           </h2>
@@ -21,7 +26,7 @@ const OurCommunity = () => {
           </p>
         </div>
         <div className="p-4 lg:p-6 rounded-2xl bg-gradient-to-br from-[#1171dd] via-[#200633] to-[#d72bba] border border-pink-300 shadow-lg shadow-purple-700 hover:shadow-2xl hover:shadow-purple-300">
-          {/* <img src={c2img} alt="" /> */}
+          <div className="mx-auto text-center text-pink-200"><MdEmojiPeople style={{margin:'auto'}} size={90}/></div>
           <h2 className="text-[64px] font-extrabold text-center text-pink-100">
             <CountUp end={1500} enableScrollSpy={true}></CountUp>+
           </h2>
@@ -29,17 +34,17 @@ const OurCommunity = () => {
             Members Connected
           </p>
         </div>
-        <div className="p-4 lg:p-6 rounded-2xl bg-gradient-to-br from-[#1171dd] via-[#200633] to-[#d72bba] border border-pink-300 shadow-lg shadow-purple-700 hover:shadow-2xl hover:shadow-purple-300">
-          {/* <img src={c3img} alt="" /> */}
+        <div className="w-[290px] p-4 lg:p-6 rounded-2xl bg-gradient-to-br from-[#1171dd] via-[#200633] to-[#d72bba] border border-pink-300 shadow-lg shadow-purple-700 hover:shadow-2xl hover:shadow-purple-300">
+          <div className="mx-auto text-center text-pink-200"><BiSolidCategory style={{margin:'auto'}} size={90}/></div>
           <h2 className="text-[64px] font-extrabold text-pink-100 text-center">
             <CountUp end={15} enableScrollSpy={true}></CountUp>+
           </h2>
-          <p className="text-2xl font-semibold text-white">
+          <p className="text-center text-2xl font-semibold text-white">
             Hobby Categories
           </p>
         </div>
         <div className="p-4 lg:p-6 rounded-2xl bg-gradient-to-br from-[#1171dd] via-[#200633] to-[#d72bba] border border-pink-300 shadow-lg shadow-purple-700 hover:shadow-2xl hover:shadow-purple-300">
-          {/* <img src={c4img} alt="" /> */}
+          <div className="mx-auto text-center text-pink-200"><RiEdgeNewLine style={{margin:'auto'}} size={90}/></div>
           <h2 className="text-[64px] font-extrabold text-center text-pink-100">
             <CountUp end={600} enableScrollSpy={true}></CountUp>+
           </h2>
