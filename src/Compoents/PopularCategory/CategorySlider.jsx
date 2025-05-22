@@ -22,7 +22,7 @@ const CategorySlider = () => {
         slidesPerView={3}
         navigation
         loop={true}
-        autoplay={{delay:3000}}
+        autoplay={{delay:2000}}
         // onSlideChange={() => console.log("slide change")}
         // onSwiper={(swiper) => console.log(swiper)}
       >

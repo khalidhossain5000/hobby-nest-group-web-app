@@ -9,7 +9,7 @@ const PopularCategory = () => {
       <h5 className="text-xl text-pink-500 font-bold text-center">Explore</h5>
       <Slide>
         <h1 className="text-6xl font-bold text-pink-600 text-center pt-6 pb-12">
-          {" "}
+          
           Popular Category
         </h1>
       </Slide>

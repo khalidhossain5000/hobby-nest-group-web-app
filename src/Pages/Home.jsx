@@ -3,6 +3,7 @@ import Slider from '../Compoents/Slider/Slider';
 import FeaturedGroup from '../Compoents/FeaturedGroup/FeaturedGroup';
 import RadialGradient from '../Compoents/Bg-Gradient/RadialGradient';
 import PopularCategory from '../Compoents/PopularCategory/PopularCategory';
+import OurCommunity from '../Compoents/OurCommiunitySection/OurCommunity';
 
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
                 <FeaturedGroup></FeaturedGroup>
                 <RadialGradient></RadialGradient>
                 <PopularCategory></PopularCategory>
+                <OurCommunity></OurCommunity>
             </main>
         </div>
         
