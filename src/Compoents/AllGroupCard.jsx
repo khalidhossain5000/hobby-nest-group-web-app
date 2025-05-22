@@ -13,7 +13,7 @@ const AllGroupCard = ({ singleGroup }) => {
             alt="Group Image"
           />
         </figure>
-        <div className="p-3 lg:p-6">
+        <div className="p-3 lg:p-6 ">
           <h2 className="text-center text-2xl lg:text-3xl font-bold text-white">{groupName}</h2>
           <p className="text-xl text-white my-2 lg:my-4">
             <span className="text-xl lg:text-2xl font-bold text-[#fffeff]">Description</span> : {description.slice(0,150)}
@@ -27,11 +27,11 @@ const AllGroupCard = ({ singleGroup }) => {
                 <h3 ><span className="text-xl lg:text-2xl font-bold text-[#fffeff] mr-2">Max-Number:</span>{maxNumber}</h3>
                 <h3 ><span className="text-xl lg:text-2xl font-bold text-[#fffeff] mr-2">Start-Date:</span>{startDate}</h3>
             </div>
-            
-          </div>
-          <div className="w-9/12 mx-auto py-3 lg:py-5">
+            <div className="w-9/12 mx-auto py-3 lg:py-5">
             <Link to={`/all-group/${_id}`} className="btn w-full bg-gradient-to-br from-[#148ead] to-[#114045] text-xl text-white" >See More</Link>
           </div>
+          </div>
+          
         </div>
       </div>
    

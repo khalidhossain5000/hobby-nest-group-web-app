@@ -14,27 +14,53 @@ const GroupDetails = () => {
   } = useLoaderData();
   return (
     <div className="">
-        <header>
-            <OtherPageNavBar/>
-        </header>
-      <div className="container mx-auto py-24">
-        <div className="title-img text-center ">
-          <img className="w-7/12 h-2/12 mx-auto" src={imageUrl} alt="" />
-          <h2 className="py-12 text-3xl font-bold text-black">{groupName}</h2>
-          <p>{description}</p>
-        </div>
-        <div className="content text-center">
-          <div>
-            <h3>{category}</h3>
-            <h3>{meetingLocation}</h3>
+      <header>
+        <OtherPageNavBar />
+      </header>
+      <main className="bg-gradient-to-br from-[#0d0518] via-[#3c0648] to-[#600e8c]">
+        <h1 className="text-[#feedff] text-center text-6xl font-bold py-12 lg:py-24 ">
+          Welcome To {groupName} Page
+        </h1>
+
+        <div className="container mx-auto">
+          <figure className="">
+            <img
+              className="w-full h-[600px] rounded-xl shadow-2xl object-cover"
+              src={`${imageUrl}`}
+              alt="Group Image"
+            />
+          </figure>
+          <div className="content pb-6 lg:pb-16">
+            <div className="title-des mt-6 pt-5 border-t-1 border-[#d950d150]">
+              <h3 className="text-center text-6xl font-bold text-[#eee0ff]">
+                {groupName}
+              </h3>
+              <p className="text-[#eddffe] my-2 text-center text-2xl py-3 lg:pt-12">
+                Description: {description}
+              </p>
+              {/* More details start */}
+              <div className="py-6 lg:py-8 mt-3 lg:mt-9 space-y-3 lg:space-y-9">
+                <h3 className="text-center text-xl lg:text-3xl text-[#fdebf7] p-3 lg:p-5 rounded-xl shadow-md hover:shadow-2xl bg-gradient-to-tr from-[#42047e] to-[#e81cff]">
+                  
+                  <span className="font-bold">Category: </span>{category}
+                </h3>
+                <h3 className="text-center text-xl lg:text-3xl text-[#fdebf7] p-3 lg:p-5 rounded-xl shadow-md hover:shadow-2xl bg-gradient-to-tr from-[#42047e] to-[#e81cff]">
+                  {/* <TbZoomMoney size={30} /> */}
+                  <span className="font-bold">meetingLocation</span>{meetingLocation}
+                </h3>
+                <h3 className="text-center text-xl lg:text-3xl text-[#fdebf7] p-3 lg:p-5 rounded-xl shadow-md hover:shadow-2xl bg-gradient-to-tr from-[#42047e] to-[#e81cff]">
+                  {/* <IoLocationSharp size={30} /> {location} */}
+                  <span className="font-bold">maxNumber</span> {maxNumber}
+                </h3>
+                <h3 className="text-center text-xl lg:text-3xl text-[#fdebf7] p-3 lg:p-5 rounded-xl shadow-md hover:shadow-2xl bg-gradient-to-tr from-[#42047e] to-[#e81cff]">
+                  {/* <IoLocationSharp size={30} /> {location} */}
+                  <span className="font-bold">startDate</span> {startDate}
+                </h3>
+              </div>
+            </div>
           </div>
-          <div>
-            <h3>{maxNumber}</h3>
-            <h3>{startDate}</h3>
-          </div>
         </div>
-        <button className="w-full text-3xl font-bold btn btn-warning text-black my-6">Join Group</button>
-      </div>
+      </main>
     </div>
   );
 };
