@@ -5,31 +5,32 @@ const AllGroupCard = ({ singleGroup }) => {
   const {_id,groupName,category,description,meetingLocation,maxNumber,imageUrl,startDate}=singleGroup;
   return (
    
-      <div className="card bg-base-100 w-96 shadow-sm">
-        <figure>
+      <div className="bg-gradient-to-br from-[#1171dd] via-[#200633] to-[#d72bba] border border-pink-300 shadow-lg shadow-purple-700 hover:shadow-2xl hover:shadow-purple-400">
+        <figure className="h-[250px]">
           <img
+            className="w-full h-[250px] object-cover"
             src={`${imageUrl}`}
-            alt="Shoes"
+            alt="Group Image"
           />
         </figure>
-        <div className="card-body">
-          <h2 className="card-title">{groupName}</h2>
-          <p>
-            {description}
+        <div className="p-3 lg:p-6">
+          <h2 className="text-center text-2xl lg:text-3xl font-bold text-white">{groupName}</h2>
+          <p className="text-xl text-white my-2 lg:my-4">
+            <span className="text-xl lg:text-2xl font-bold text-[#fffeff]">Description</span> : {description.slice(0,150)}
           </p>
           <div className="otherinfo">
-            <div>
-                <h3>{category}</h3>
-                <h3>{meetingLocation}</h3>
+            <div className="text-xl text-white my-2 lg:my-4 space-y-2">
+                <h3 ><span className="mr-2 text-xl lg:text-2xl font-bold text-[#fffeff]">Category</span>{category}</h3>
+                <h3 ><span className="mr-2 text-xl lg:text-2xl font-bold text-[#fffeff]">Meeting-Location:</span>{meetingLocation}</h3>
             </div>
-            <div>
-                <h3>{maxNumber}</h3>
-                <h3>{startDate}</h3>
+            <div className="text-xl text-white my-2 lg:my-4">
+                <h3 ><span className="text-xl lg:text-2xl font-bold text-[#fffeff] mr-2">Max-Number:</span>{maxNumber}</h3>
+                <h3 ><span className="text-xl lg:text-2xl font-bold text-[#fffeff] mr-2">Start-Date:</span>{startDate}</h3>
             </div>
             
           </div>
-          <div className="w-full">
-            <Link to={`/all-group/${_id}`} className="btn btn-primary w-full" >See More</Link>
+          <div className="w-9/12 mx-auto py-3 lg:py-5">
+            <Link to={`/all-group/${_id}`} className="btn w-full bg-gradient-to-br from-[#148ead] to-[#114045] text-xl text-white" >See More</Link>
           </div>
         </div>
       </div>
