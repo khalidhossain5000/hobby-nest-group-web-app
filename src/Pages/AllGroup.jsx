@@ -2,6 +2,7 @@ import React from "react";
 import OtherPageNavBar from "../Compoents/Header/OtherPageNavBar";
 import { useLoaderData } from "react-router";
 import AllGroupCard from "../Compoents/AllGroupCard";
+import Footer from "../Compoents/Footer/Footer";
 
 const AllGroup = () => {
     const allGroupData=useLoaderData()
@@ -24,6 +25,9 @@ const AllGroup = () => {
           </div>
         </section>
       </main>
+      <footer>
+        <Footer></Footer>
+      </footer>
     </div>
   );
 };

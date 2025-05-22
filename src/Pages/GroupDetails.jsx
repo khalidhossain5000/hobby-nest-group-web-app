@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData } from "react-router";
 import OtherPageNavBar from "../Compoents/Header/OtherPageNavBar";
+import Footer from "../Compoents/Footer/Footer";
 
 const GroupDetails = () => {
   const {
@@ -61,6 +62,9 @@ const GroupDetails = () => {
           </div>
         </div>
       </main>
+      <footer>
+        <Footer></Footer>
+      </footer>
     </div>
   );
 };

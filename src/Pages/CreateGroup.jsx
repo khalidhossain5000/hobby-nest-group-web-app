@@ -6,6 +6,7 @@ import { AuthContext } from "../Provider/AuthContext";
 
 import bgImg from '../assets/groupBg/nmntan-ik.jpg'
 import NavBar from "../Compoents/Header/NavBar";
+import Footer from "../Compoents/Footer/Footer";
 const CreateGroup = () => {
   const [startDate, setStartDate] = useState(null);
   const { user } = use(AuthContext);
@@ -163,6 +164,9 @@ const CreateGroup = () => {
           </form>
         </section>
       </main>
+      <footer>
+        <Footer></Footer>
+      </footer>
     </div>
   );
 };

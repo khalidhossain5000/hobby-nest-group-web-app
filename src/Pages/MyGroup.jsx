@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLoaderData } from "react-router";
 import Swal from "sweetalert2";
 import OtherPageNavBar from "../Compoents/Header/OtherPageNavBar";
+import Footer from "../Compoents/Footer/Footer";
+import MyGroupEmpty from "../Compoents/MyGroupIntitialMessage/MyGroupEmpty";
 const MyGroup = () => {
   const myGroupData = useLoaderData();
-
+  const [groupAllData,setGroupAllData]=useState(myGroupData)
+  if(groupAllData.length<=0){
+    return <MyGroupEmpty/>
+  }
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -22,11 +27,15 @@ const MyGroup = () => {
         .then((res)=>res.json())
         .then((data)=>{
             if(data.deletedCount){
+              
             Swal.fire({
                 title: "Deleted!",
                 text: "Your file has been deleted.",
                 icon: "success",
             });
+            //remove group from the state
+            const remainingGroup=groupAllData.filter((group)=>group._id !== id);
+            setGroupAllData(remainingGroup)
             }
         })
 
@@ -59,7 +68,7 @@ const MyGroup = () => {
             </thead>
             <tbody className="">
               {/* row 1 */}
-              {myGroupData.map((group, index) => (
+              {groupAllData.map((group, index) => (
                 <tr className="border-b-1 border-b-pink-600 border-r-1 text-[17px] font-normal" key={group._id}>
                   <th>{index + 1}</th>
                   <td className="border-x-1 border-x-pink-300">
@@ -105,6 +114,7 @@ const MyGroup = () => {
         </div>
       </div>
       </main>
+      <Footer></Footer>
     </div>
   );
 };

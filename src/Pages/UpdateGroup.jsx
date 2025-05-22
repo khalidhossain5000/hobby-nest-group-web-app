@@ -5,6 +5,7 @@ import { AuthContext } from "../Provider/AuthContext";
 import { useLoaderData } from "react-router";
 import bgImg from '../assets/groupBg/evening-ii.jpg'
 import NavBar from "../Compoents/Header/NavBar";
+import Footer from "../Compoents/Footer/Footer";
 const UpdateGroup = () => {
     const singleGroupData=useLoaderData()
     const {groupName,category,description,meetingLocation,maxNumber,imageUrl,_id}=singleGroupData;
@@ -160,6 +161,9 @@ const UpdateGroup = () => {
       </section>
 
       </main>
+      <footer>
+        <Footer></Footer>
+      </footer>
     </div>
     
   );
