@@ -6,11 +6,13 @@ import { AuthContext } from "../Provider/AuthContext";
 import bgImg from '../assets/groupBg/nmntan-ik.jpg'
 import NavBar from "../Compoents/Header/NavBar";
 import Footer from "../Compoents/Footer/Footer";
+
 const CreateGroup = () => {
   const [startDate, setStartDate] = useState(null);
+  // const [loader,setLoader]=useState(true)
   const { user } = use(AuthContext);
   const email=user?.email;
-  
+
   const handleCreateGroup = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -43,7 +45,21 @@ const CreateGroup = () => {
         console.log("data after send", data);
       });
   };
-
+//INTIAL WELCOME SPINNER START
+  // const [welcomeLoader, setWelcomeLoader] = useState(true);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setWelcomeLoader(false);
+  //   }, 500);
+  //   return () => clearTimeout(timer);
+  // }, []);
+  // if (welcomeLoader) {
+  //   return (
+  //     <div className="flex items-center justify-center fixed inset-0 bg-white z-50">
+  //       <HashLoader color="#dd0ff0" />
+  //     </div>
+  //   );
+  // }
   return (
     <div className="">
       <header className="">
@@ -81,6 +97,7 @@ const CreateGroup = () => {
                   <option>Cooking</option>
                   <option>Reading</option>
                   <option>Writing </option>
+                  <option>Dancing </option>
                 </select>
               </fieldset>
               <fieldset className="bg-transparent fieldset rounded-box border border-pink-300 p-4">
@@ -145,7 +162,7 @@ const CreateGroup = () => {
                   name="userName"
                   className="input w-full shadow-2xl bg-transparent text-pink-100 border-2 border-pink-500 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl"
                   readOnly
-                  value={`User Name : ${user?.displayName}`}
+                  defaultValue={`User Name : ${user?.displayName}`}
                 />
               </fieldset>
             </div>
@@ -157,7 +174,8 @@ const CreateGroup = () => {
                   name="email"
                   className="input w-full shadow-2xl bg-transparent text-pink-100 border-2 border-pink-500 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl"
                   readOnly
-                  value={`User Name : ${user?.email || ''}`}
+                  value={`User Email : ${email}`}
+                  
                 />
               </fieldset>
             </div>

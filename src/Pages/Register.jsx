@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthContext';
 import bgImg from '../assets/authbg/sky-dar.jpg'
 const Register = () => {
-    const {createUser,updateUserProfile,user,setUser,handleGoogleUser}=use(AuthContext)
+    const {createUser,updateUserProfile,setUser,handleGoogleUser}=use(AuthContext)
     const [passwordError, setPasswordError] = useState('');
     const navigate=useNavigate()
     const registerLocation = useLocation();
@@ -24,7 +24,7 @@ const Register = () => {
         createUser(email,password)
         .then((result)=>{
             alert("user created")
-            console.log(result);
+            const user = result.user;
             //update profile here
             updateUserProfile({displayName:name,photoURL:photo})
             .then(()=>{
