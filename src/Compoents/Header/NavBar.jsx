@@ -1,17 +1,32 @@
-import React, { use } from "react";
+import React, { use, useEffect, useState } from "react";
 import { NavLink } from "react-router";
 import { AuthContext } from "../../Provider/AuthContext";
 import toast from "react-hot-toast";
+import DarkToggleBtn from "../DarkModeToggle/DarkToggleBtn";
 
 
 const NavBar = () => {
   const {user,logOutUser}=use(AuthContext)
-  
+ 
+  const [theme,setTheme] =useState(localStorage.getItem('theme') || 'light');
+
+  useEffect(()=>{
+    document.documentElement.setAttribute('data-theme',theme);
+    localStorage.setItem('theme',theme);
+  },[theme])
+
+  const toggleTheme=()=>{
+    setTheme(theme === 'light' ? 'dark' : 'light')
+  }
     const links=<>
             <li><NavLink to='/'>Home</NavLink></li>
             <li><NavLink to='/create-group'>Create Group(P)</NavLink></li>
             <li><NavLink to='/all-group'>All Groups</NavLink></li>
             <li><NavLink to={`/my-group/${user?.email}`}>My Group(P)</NavLink></li>
+            
+            <button onClick={toggleTheme}>
+            <DarkToggleBtn/>
+          </button>
 
     </>
     const handleLogOut=()=>{
