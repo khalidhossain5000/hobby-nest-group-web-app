@@ -45,34 +45,20 @@ const CreateGroup = () => {
         console.log("data after send", data);
       });
   };
-//INTIAL WELCOME SPINNER START
-  // const [welcomeLoader, setWelcomeLoader] = useState(true);
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setWelcomeLoader(false);
-  //   }, 500);
-  //   return () => clearTimeout(timer);
-  // }, []);
-  // if (welcomeLoader) {
-  //   return (
-  //     <div className="flex items-center justify-center fixed inset-0 bg-white z-50">
-  //       <HashLoader color="#dd0ff0" />
-  //     </div>
-  //   );
-  // }
+
   return (
     <div className="">
       <header className="">
         <NavBar/>
       </header>
       <main style={{backgroundImage:`url(${bgImg})`}} className="bg-cover bg-no-repeat py-36 bg-top-left">
-        <h1 className="text-[#feedff] container mx-auto text-center text-6xl font-bold py-12">Create Group</h1>
-        <h3 className="text-[#feedff] text-center text-3xl font-medium">Fill Up The Form And Create Your Hobbie Group Now!</h3>
-        <section className="form-full p-24 ">
+        <h1 className="text-[#feedff] container mx-auto text-center text-4xl lg:text-6xl font-bold py-12">Create Group</h1>
+        <h3 className="text-[#feedff] text-center text-xl lg:text-3xl font-medium">Fill Up The Form And Create Your Hobbie Group Now!</h3>
+        <section className="form-full mt-6 lg:mt-0 p-5 lg:p-24 ">
           <form onSubmit={handleCreateGroup}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <fieldset className="bg-transparent fieldset rounded-box border border-pink-300 p-4">
-                <label className="label text-pink-100 text-2xl pb-3">Group Name</label>
+                <label className="label text-pink-100 text-xl lg:text-2xl pb-3">Group Name</label>
                 <input
                   type="text"
                   name="groupName"
@@ -81,7 +67,7 @@ const CreateGroup = () => {
                 />
               </fieldset>
               <fieldset className="bg-transparent fieldset rounded-box border border-pink-300 p-4">
-                <label className="label text-pink-100 text-2xl pb-3">Select Hobby Category</label>
+                <label className="label text-pink-100 text-xl lg:text-2xl pb-3">Select Hobby Category</label>
                 <select
                   name="category"
 
@@ -101,7 +87,7 @@ const CreateGroup = () => {
                 </select>
               </fieldset>
               <fieldset className="bg-transparent fieldset rounded-box border border-pink-300 p-4">
-                <label className="label text-pink-100 text-2xl pb-3">Description</label>
+                <label className="label text-pink-100 text-xl lg:text-2xl pb-3">Description</label>
                 <textarea
                   name="description"
                   placeholder="Description"
@@ -110,7 +96,7 @@ const CreateGroup = () => {
                 ></textarea>
               </fieldset>
               <fieldset className="bg-transparent fieldset rounded-box border border-pink-300 p-4">
-                <label className="label text-pink-100 text-2xl pb-3">Meeting Location</label>
+                <label className="label text-pink-100 text-xl lg:text-2xl pb-3">Meeting Location</label>
                 <input
                   type="text"
                   name="meetingLocation"
@@ -120,7 +106,7 @@ const CreateGroup = () => {
                 />
               </fieldset>
               <fieldset className="bg-transparent fieldset rounded-box border border-pink-300 p-4">
-                <label className="label text-pink-100 text-2xl pb-3">Max Members</label>
+                <label className="label text-pink-100 text-xl lg:text-2xl pb-3">Max Members</label>
                 <input
                   type="number"
                   name="maxNumber"
@@ -128,12 +114,12 @@ const CreateGroup = () => {
                   placeholder="Max Members"
                 />
               </fieldset>
-              <fieldset className="bg-transparent fieldset rounded-box border border-pink-300 p-4">
-                <label className="label text-pink-100 text-2xl pb-3">
+              <fieldset className="bg-transparent fieldset rounded-box border border-pink-300 lg:p-4 p-2 ">
+                <label className="label text-pink-100 lg:text-2xl p-2 lg:p-0 pb-3">
                   Start Date (deadline equivalent)
                 </label>
 
-                <fieldset className="bg-transparent fieldset rounded-box border border-pink-300 px-2">
+                <fieldset className=" bg-transparent fieldset rounded-box border border-pink-300 px-2">
                   <DatePicker
                     selected={startDate}
                     onChange={(date) => {
@@ -142,12 +128,12 @@ const CreateGroup = () => {
                     }}
                     value={new Date()}
                     placeholderText="Select a date between today and 5 days in the future"
-                    className="w-full py-3 text-white px-5gi text-xl font-bold"
+                    className="w-full lg:py-3 text-white px-5 lg:text-xl lg:font-bold"
                   />
                 </fieldset>
               </fieldset>
               <fieldset className="bg-transparent fieldset rounded-box border border-pink-300 p-4">
-                <label className="label text-pink-100 text-2xl pb-3">Image URL</label>
+                <label className="label text-pink-100 text-xl lg:text-2xl pb-3">Image URL</label>
                 <input
                   type="text"
                   name="imageUrl"
@@ -156,7 +142,7 @@ const CreateGroup = () => {
                 />
               </fieldset>
               <fieldset className="bg-transparent fieldset rounded-box border border-pink-300 p-4">
-                <label className="label text-pink-100 text-2xl pb-3">User Name (readonly)</label>
+                <label className="label text-pink-100 text-xl lg:text-2xl pb-3">User Name (readonly)</label>
                 <input
                   type="text"
                   name="userName"
@@ -168,7 +154,7 @@ const CreateGroup = () => {
             </div>
             <div className="py-6">
               <fieldset className="bg-transparent fieldset rounded-box border border-pink-300 p-4">
-                <label className="label text-pink-100 text-2xl pb-3">User Email (readonly)</label>
+                <label className="label text-pink-100 text-xl lg:text-2xl pb-3">User Email (readonly)</label>
                 <input
                   type="text"
                   name="email"
