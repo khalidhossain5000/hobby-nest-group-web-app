@@ -47,10 +47,18 @@ const NavBar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-gray-800 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               {links}
-             
+             {
+              user ? <div className="">
+                <div className="tooltip tooltip-bottom" data-tip={`${user.displayName}`}>
+                  <img className='w-12 h-12 rounded-full cursor-pointer' src={user.photoURL} alt="" /> 
+                </div>
+                <button onClick={handleLogOut} className="mt-12 btn bg-gradient-to-t from-[#b80af5] via-[#55077a] to-[#1e0630] text-pink-100 hover:shadow-2xl hover:shadow-purple-200 cursor-pointer border-1 border-pink-500  hover:bg-pink-700 hover:text-white">Log Out</button></div> : <div className=""><li><NavLink to='/auth/register'>Register(C)</NavLink></li>
+                                        <li><NavLink to='/auth/login'>Login(C)</NavLink></li>
+                                    </div>
+              }
             </ul>
           </div>
           <div>
