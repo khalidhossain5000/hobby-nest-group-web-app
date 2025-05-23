@@ -34,7 +34,7 @@ const UpdateGroup = () => {
     };
 
     //Update to db
-    fetch(`http://localhost:3000/groups/${_id}`, {
+    fetch(`https://assignment-10-server-cyan-one.vercel.app/groups/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

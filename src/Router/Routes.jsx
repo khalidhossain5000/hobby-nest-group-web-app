@@ -26,31 +26,49 @@ export const router = createBrowserRouter([
   },
   {
     path: "create-group",
-    element: <PrivateRoute><CreateGroup /></PrivateRoute>,
+    element: (
+      <PrivateRoute>
+        <CreateGroup />
+      </PrivateRoute>
+    ),
   },
   {
     path: "all-group",
     element: <AllGroup />,
-    loader:()=>fetch('http://localhost:3000/groups'),
-    hydrateFallbackElement:<Loading></Loading>
+    loader: () =>
+      fetch("https://assignment-10-server-cyan-one.vercel.app/groups"),
+    hydrateFallbackElement: <Loading></Loading>,
   },
   {
-    path:'all-group/:id',
-    loader:({params})=>fetch(`http://localhost:3000/groups/${params.id}`),
-    element:<GroupDetails/>,
-    hydrateFallbackElement:<Loading></Loading>
+    path: "all-group/:id",
+    loader: ({ params }) =>
+      fetch(
+        `https://assignment-10-server-cyan-one.vercel.app/groups/${params.id}`
+      ),
+    element: <GroupDetails />,
+    hydrateFallbackElement: <Loading></Loading>,
   },
   {
     path: "my-group/:email",
-    loader:({params})=>fetch(`http://localhost:3000/all-groups/${params.email}`),
-    element: <PrivateRoute><MyGroup /></PrivateRoute>,
-    hydrateFallbackElement:<Loading></Loading>
+    loader: ({ params }) =>
+      fetch(
+        `https://assignment-10-server-cyan-one.vercel.app/all-groups/${params.email}`
+      ),
+    element: (
+      <PrivateRoute>
+        <MyGroup />
+      </PrivateRoute>
+    ),
+    hydrateFallbackElement: <Loading></Loading>,
   },
   {
-    path:'update-group/:id',
-    loader:({params})=>fetch(`http://localhost:3000/groups/${params.id}`),
-    element:<UpdateGroup/>,
-    hydrateFallbackElement:<Loading></Loading>
+    path: "update-group/:id",
+    loader: ({ params }) =>
+      fetch(
+        `https://assignment-10-server-cyan-one.vercel.app/groups/${params.id}`
+      ),
+    element: <UpdateGroup />,
+    hydrateFallbackElement: <Loading></Loading>,
   },
   {
     path: "/auth",
@@ -67,7 +85,7 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path:'*',
-    Component:ErrorPageGlobal
-  }
+    path: "*",
+    Component: ErrorPageGlobal,
+  },
 ]);

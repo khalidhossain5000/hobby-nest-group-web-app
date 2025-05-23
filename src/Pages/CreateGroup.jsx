@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../Provider/AuthContext";
 // import bgImg from '../assets/groupBg/evening-ii.jpg'
-import bgImg from '../assets/groupBg/nmntan-ik.jpg'
+import bgImg from "../assets/groupBg/nmntan-ik.jpg";
 import NavBar from "../Compoents/Header/NavBar";
 import Footer from "../Compoents/Footer/Footer";
 import toast from "react-hot-toast";
@@ -12,7 +12,7 @@ const CreateGroup = () => {
   const [startDate, setStartDate] = useState(null);
   // const [loader,setLoader]=useState(true)
   const { user } = use(AuthContext);
-  const email=user?.email;
+  const email = user?.email;
 
   const handleCreateGroup = (e) => {
     e.preventDefault();
@@ -21,19 +21,19 @@ const CreateGroup = () => {
     const createGroupData = Object.fromEntries(formData.entries());
     if (!startDate) {
       alert("select a date");
-      return
+      return;
     }
-    
+
     // if(!email){
     //   return ;
     // }
     const allGroupsData = {
       ...createGroupData,
       startDate,
-      email
+      email,
     };
     //send this data to the db
-    fetch("http://localhost:3000/groups", {
+    fetch("https://assignment-10-server-cyan-one.vercel.app/groups", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -43,19 +43,19 @@ const CreateGroup = () => {
       .then((res) => res.json())
       .then((data) => {
         toast.success(`Group Created Successfully`, {
-            className: "w-[300px] h-[100px] text-xl font-bold ",
-            removeDelay: 1000,
-            iconTheme: {
-              primary: "#16061e",
-              secondary: "#ef54e2",
-            },
-            style: {
-              border: "1px solid black",
-              color: "white",
-              backgroundImage:
-                "linear-gradient(to bottom right,#4B5563,#9333EA, #3B82F6)",
-            },
-          });
+          className: "w-[300px] h-[100px] text-xl font-bold ",
+          removeDelay: 1000,
+          iconTheme: {
+            primary: "#16061e",
+            secondary: "#ef54e2",
+          },
+          style: {
+            border: "1px solid black",
+            color: "white",
+            backgroundImage:
+              "linear-gradient(to bottom right,#4B5563,#9333EA, #3B82F6)",
+          },
+        });
         console.log("data after send", data);
       });
   };
@@ -63,16 +63,25 @@ const CreateGroup = () => {
   return (
     <div className="">
       <header className="">
-        <NavBar/>
+        <NavBar />
       </header>
-      <main style={{backgroundImage:`url(${bgImg})`}} className="bg-cover bg-no-repeat py-36 bg-top-left">
-        <h1 className="text-[#feedff] container mx-auto text-center text-4xl lg:text-6xl font-bold py-12">Create Group</h1>
-        <h3 className="text-[#feedff] text-center text-xl lg:text-3xl font-medium">Fill Up The Form And Create Your Hobbie Group Now!</h3>
+      <main
+        style={{ backgroundImage: `url(${bgImg})` }}
+        className="bg-cover bg-no-repeat py-36 bg-top-left"
+      >
+        <h1 className="text-[#feedff] container mx-auto text-center text-4xl lg:text-6xl font-bold py-12">
+          Create Group
+        </h1>
+        <h3 className="text-[#feedff] text-center text-xl lg:text-3xl font-medium">
+          Fill Up The Form And Create Your Hobbie Group Now!
+        </h3>
         <section className="form-full mt-6 lg:mt-0 p-5 lg:p-24 ">
           <form onSubmit={handleCreateGroup}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <fieldset className="bg-transparent fieldset rounded-box border border-pink-300 p-4">
-                <label className="label text-pink-100 text-xl lg:text-2xl pb-3">Group Name</label>
+                <label className="label text-pink-100 text-xl lg:text-2xl pb-3">
+                  Group Name
+                </label>
                 <input
                   type="text"
                   name="groupName"
@@ -81,14 +90,17 @@ const CreateGroup = () => {
                 />
               </fieldset>
               <fieldset className="bg-transparent fieldset rounded-box border border-pink-300 p-4">
-                <label className="label text-pink-100 text-xl lg:text-2xl pb-3">Select Hobby Category</label>
+                <label className="label text-pink-100 text-xl lg:text-2xl pb-3">
+                  Select Hobby Category
+                </label>
                 <select
                   name="category"
-
                   className="w-full shadow-2xl bg-transparent text-black font-semibold border-2 border-pink-500 py-3 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl"
                 >
                   {/* <option disabled={true}>Hobby Category</option> */}
-                  <option value="" hidden>Select Hobby Category</option>
+                  <option value="" hidden>
+                    Select Hobby Category
+                  </option>
                   <option>Drawing & Painting</option>
                   <option>Photography</option>
                   <option>Video Gaming</option>
@@ -101,26 +113,30 @@ const CreateGroup = () => {
                 </select>
               </fieldset>
               <fieldset className="bg-transparent fieldset rounded-box border border-pink-300 p-4">
-                <label className="label text-pink-100 text-xl lg:text-2xl pb-3">Description</label>
+                <label className="label text-pink-100 text-xl lg:text-2xl pb-3">
+                  Description
+                </label>
                 <textarea
                   name="description"
                   placeholder="Description"
                   className="w-full textarea textarea-xs input shadow-2xl bg-transparent text-pink-100 border-2 border-pink-500 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 !text-xl"
-                  
                 ></textarea>
               </fieldset>
               <fieldset className="bg-transparent fieldset rounded-box border border-pink-300 p-4">
-                <label className="label text-pink-100 text-xl lg:text-2xl pb-3">Meeting Location</label>
+                <label className="label text-pink-100 text-xl lg:text-2xl pb-3">
+                  Meeting Location
+                </label>
                 <input
                   type="text"
                   name="meetingLocation"
                   className="input w-full shadow-2xl bg-transparent text-pink-100 border-2 border-pink-500 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl"
-                  
                   placeholder="Meeting Location"
                 />
               </fieldset>
               <fieldset className="bg-transparent fieldset rounded-box border border-pink-300 p-4">
-                <label className="label text-pink-100 text-xl lg:text-2xl pb-3">Max Members</label>
+                <label className="label text-pink-100 text-xl lg:text-2xl pb-3">
+                  Max Members
+                </label>
                 <input
                   type="number"
                   name="maxNumber"
@@ -137,8 +153,8 @@ const CreateGroup = () => {
                   <DatePicker
                     selected={startDate}
                     onChange={(date) => {
-                      const formattedDate=date.toISOString().split('T')[0]
-                      setStartDate(formattedDate)
+                      const formattedDate = date.toISOString().split("T")[0];
+                      setStartDate(formattedDate);
                     }}
                     value={new Date()}
                     placeholderText="Select a date between today and 5 days in the future"
@@ -147,7 +163,9 @@ const CreateGroup = () => {
                 </fieldset>
               </fieldset>
               <fieldset className="bg-transparent fieldset rounded-box border border-pink-300 p-4">
-                <label className="label text-pink-100 text-xl lg:text-2xl pb-3">Image URL</label>
+                <label className="label text-pink-100 text-xl lg:text-2xl pb-3">
+                  Image URL
+                </label>
                 <input
                   type="text"
                   name="imageUrl"
@@ -156,7 +174,9 @@ const CreateGroup = () => {
                 />
               </fieldset>
               <fieldset className="bg-transparent fieldset rounded-box border border-pink-300 p-4">
-                <label className="label text-pink-100 text-xl lg:text-2xl pb-3">User Name (readonly)</label>
+                <label className="label text-pink-100 text-xl lg:text-2xl pb-3">
+                  User Name (readonly)
+                </label>
                 <input
                   type="text"
                   name="userName"
@@ -168,19 +188,24 @@ const CreateGroup = () => {
             </div>
             <div className="py-6">
               <fieldset className="bg-transparent fieldset rounded-box border border-pink-300 p-4">
-                <label className="label text-pink-100 text-xl lg:text-2xl pb-3">User Email (readonly)</label>
+                <label className="label text-pink-100 text-xl lg:text-2xl pb-3">
+                  User Email (readonly)
+                </label>
                 <input
                   type="text"
                   name="email"
                   className="input w-full shadow-2xl bg-transparent text-pink-100 border-2 border-pink-500 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl"
                   readOnly
                   value={`User Email : ${email}`}
-                  
                 />
               </fieldset>
             </div>
 
-            <input type="submit" className="border-3 backdrop-blur-xl  border-cyan-600 w-full bg-transparent p-6 text-2xl font-bold cursor-pointer text-pink-100 rounded-xl mt-4 hover:bg-gradient-to-tl hover:from-[#07233c] hover:via-[#1cc0de] hover:to-[#020611] transition duration-500" value="Create Group" />
+            <input
+              type="submit"
+              className="border-3 backdrop-blur-xl  border-cyan-600 w-full bg-transparent p-6 text-2xl font-bold cursor-pointer text-pink-100 rounded-xl mt-4 hover:bg-gradient-to-tl hover:from-[#07233c] hover:via-[#1cc0de] hover:to-[#020611] transition duration-500"
+              value="Create Group"
+            />
           </form>
         </section>
       </main>
