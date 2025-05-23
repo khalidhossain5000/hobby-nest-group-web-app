@@ -15,7 +15,7 @@ import reading from '../../lottieFile/reading.json'
 import fishing from '../../lottieFile/fishing.json'
 const CategorySlider = () => {
   return (
-    <div className="">
+    <div className="w-full">
       <Swiper
         modules={[Navigation,Autoplay]}
         spaceBetween={80}
@@ -23,8 +23,20 @@ const CategorySlider = () => {
         navigation
         loop={true}
         autoplay={{delay:2000}}
-        // onSlideChange={() => console.log("slide change")}
-        // onSwiper={(swiper) => console.log(swiper)}
+        breakpoints={{
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 50,
+        },
+      }}
       >
         {/* slider -1 */}
         <SwiperSlide>
@@ -33,7 +45,7 @@ const CategorySlider = () => {
                     <Lottie animationData={gaming} />
                 </div>
                 <div className="content">
-                    <h3 className="text-5xl bg-gray-300 p-3 rounded-xl font-bold text-purple-600">Video Gaming</h3>
+                    <h3 className="lg:text-5xl bg-gray-300 p-3 rounded-xl font-bold text-purple-600">Video Gaming</h3>
                 </div>
             </div>
         </SwiperSlide>         
@@ -44,7 +56,7 @@ const CategorySlider = () => {
                     <Lottie animationData={photo} />
                 </div>
                 <div className="content">
-                    <h3 className="text-5xl bg-gray-300 p-3 rounded-xl font-bold text-purple-600">PhotoGraphy</h3>
+                    <h3 className="lg:text-5xl bg-gray-300 p-3 rounded-xl font-bold text-purple-600">PhotoGraphy</h3>
                 </div>
             </div>
         </SwiperSlide>         
@@ -55,7 +67,7 @@ const CategorySlider = () => {
                     <Lottie animationData={running} />
                 </div>
                 <div className="content">
-                    <h3 className="text-5xl bg-gray-300 p-3 rounded-xl font-bold text-purple-600">Running</h3>
+                    <h3 className="lg:text-5xl bg-gray-300 p-3 rounded-xl font-bold text-purple-600">Running</h3>
                 </div>
             </div>
         </SwiperSlide>       
@@ -66,7 +78,7 @@ const CategorySlider = () => {
                     <Lottie animationData={reading} />
                 </div>
                 <div className="content">
-                    <h3 className="text-5xl bg-gray-300 p-3 rounded-xl font-bold text-purple-600">Reading</h3>
+                    <h3 className="lg:text-5xl bg-gray-300 p-3 rounded-xl font-bold text-purple-600">Reading</h3>
                 </div>
             </div>
         </SwiperSlide>      
@@ -77,7 +89,7 @@ const CategorySlider = () => {
                     <Lottie animationData={fishing} />
                 </div>
                 <div className="content">
-                    <h3 className="text-5xl bg-gray-300 p-3 rounded-xl font-bold text-purple-600">fishing</h3>
+                    <h3 className="lg:text-5xl bg-gray-300 p-3 rounded-xl font-bold text-purple-600">fishing</h3>
                 </div>
             </div>
         </SwiperSlide>         

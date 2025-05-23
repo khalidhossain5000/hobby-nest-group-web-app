@@ -13,7 +13,7 @@ const PopularCategory = () => {
           Popular Category
         </h1>
       </Slide>
-      <div className="w-full py-12 lg:py-24">
+      <div className="max-w-full py-12 lg:py-24">
         
             <CategorySlider/>
         
