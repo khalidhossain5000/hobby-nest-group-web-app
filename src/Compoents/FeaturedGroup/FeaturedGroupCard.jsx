@@ -13,7 +13,7 @@ const FeaturedGroupCard = ({ featureGroup }) => {
   } = featureGroup;
   return (
 
-      <div className="bg-gradient-to-br from-[#1171dd] via-[#200633] to-[#d72bba] border border-pink-300 shadow-lg shadow-purple-700 hover:shadow-2xl hover:shadow-purple-400">
+      <div className="mx-2 lg:mx-0 bg-gradient-to-br from-[#1171dd] via-[#200633] to-[#d72bba] border border-pink-300 shadow-lg shadow-purple-700 hover:shadow-2xl hover:shadow-purple-400">
       <figure className="h-[250px]">
         <img
           className="w-full h-[250px] object-cover"
