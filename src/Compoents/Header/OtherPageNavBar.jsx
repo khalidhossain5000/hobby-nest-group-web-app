@@ -2,7 +2,7 @@ import React, { use } from "react";
 import { NavLink } from "react-router";
 import { AuthContext } from "../../Provider/AuthContext";
 import toast from "react-hot-toast";
-
+import logo from "../../assets/logo/logo-transparent.png"
 const OtherPageNavBar = () => {
   const { user, logOutUser } = use(AuthContext);
   const links = (
@@ -44,7 +44,7 @@ const OtherPageNavBar = () => {
       
   };
   return (
-    <div className=" w-full bg-gradient-to-r from-[#8e008e] via-[#ff69b4] to-[#be185d] text-black ">
+    <div className="text-white w-full bg-gradient-to-r from-[#160621] via-[#5c05ac] to-[#be185d] ">
       <div className="navbar container mx-auto ">
         <div className="flex items-center justify-between w-full lg:navbar-start">
           <div className="dropdown">
@@ -101,7 +101,7 @@ const OtherPageNavBar = () => {
             </ul>
           </div>
           <div>
-            <h2>LOGO</h2>
+            <img className="max-w-[150px] lg:max-w-[250px] " src={logo} alt="" />
           </div>
         </div>
         <div className="navbar-end hidden lg:flex">

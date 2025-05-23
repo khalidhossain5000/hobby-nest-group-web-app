@@ -58,22 +58,9 @@ const UpdateGroup = () => {
                 "linear-gradient(to bottom right,#4B5563,#9333EA, #3B82F6)",
             },
           });
-        } else {
-          toast.error(`Please Make Some Changes To Update The Group`, {
-            className: "w-[300px] h-[100px] text-xl font-bold ",
-            removeDelay: 1000,
-            iconTheme: {
-              primary: "#0d0518",
-              secondary: "#fce6fa",
-            },
-
-            style: {
-              border: "1px solid black",
-              color: "white",
-              backgroundImage: "linear-gradient(to top left,#f60002,#d408d1)",
-            },
-          });
         }
+          
+        
       });
   };
   return (

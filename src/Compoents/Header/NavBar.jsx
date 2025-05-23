@@ -3,7 +3,7 @@ import { NavLink } from "react-router";
 import { AuthContext } from "../../Provider/AuthContext";
 import toast from "react-hot-toast";
 import DarkToggleBtn from "../DarkModeToggle/DarkToggleBtn";
-
+import logo from '../../assets/logo/logo-transparent.png'
 
 const NavBar = () => {
   const {user,logOutUser}=use(AuthContext)
@@ -88,7 +88,7 @@ const NavBar = () => {
             </ul>
           </div>
           <div>
-            <h2>LOGO</h2>
+            <img className="max-w-[150px] lg:max-w-[250px] " src={logo} alt="" />
           </div>
         </div>
         <div className="navbar-end hidden lg:flex">

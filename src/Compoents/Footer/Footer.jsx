@@ -6,6 +6,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FaFacebook, FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import { NavLink } from "react-router";
+import logo from '../../assets/logo/logo.png'
 const Footer = () => {
   const { user } = use(AuthContext);
 
@@ -17,7 +18,7 @@ const Footer = () => {
             <div className="info ">
               {/* <img className='mx-auto' src={logo} alt="" /> */}
               <div className="icon-title mt-6 mx-auto">
-                <h2 className="text-3xl font-bold">Logo Coming soon</h2>
+                <img className="max-w-[150px] lg:max-w-[250px] " src={logo} alt="" />
                 <p className="text-[#364863] text-[18px] max-w-sm mt-3 md:mt-6 lg:mt-9">
                   Blienum nhaedrum torquatos nec eul, vietraxit periculis ex,
                   nihil is in mei. Xei ariculaeuripidis, fincartem ei est.
