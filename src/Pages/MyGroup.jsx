@@ -13,6 +13,7 @@ const MyGroup = () => {
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
+      theme:'dark',
       text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
@@ -29,6 +30,7 @@ const MyGroup = () => {
             if(data.deletedCount){
               
             Swal.fire({
+                theme:'dark',
                 title: "Deleted!",
                 text: "Your file has been deleted.",
                 icon: "success",

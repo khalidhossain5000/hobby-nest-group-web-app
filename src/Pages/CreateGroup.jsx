@@ -6,6 +6,7 @@ import { AuthContext } from "../Provider/AuthContext";
 import bgImg from '../assets/groupBg/nmntan-ik.jpg'
 import NavBar from "../Compoents/Header/NavBar";
 import Footer from "../Compoents/Footer/Footer";
+import toast from "react-hot-toast";
 
 const CreateGroup = () => {
   const [startDate, setStartDate] = useState(null);
@@ -22,10 +23,10 @@ const CreateGroup = () => {
       alert("select a date");
       return
     }
-    console.log(createGroupData);
-    if(!email){
-      return ;
-    }
+    
+    // if(!email){
+    //   return ;
+    // }
     const allGroupsData = {
       ...createGroupData,
       startDate,
@@ -41,7 +42,20 @@ const CreateGroup = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        alert("Data send to mongo ");
+        toast.success(`Group Created Successfully`, {
+            className: "w-[300px] h-[100px] text-xl font-bold ",
+            removeDelay: 1000,
+            iconTheme: {
+              primary: "#16061e",
+              secondary: "#ef54e2",
+            },
+            style: {
+              border: "1px solid black",
+              color: "white",
+              backgroundImage:
+                "linear-gradient(to bottom right,#4B5563,#9333EA, #3B82F6)",
+            },
+          });
         console.log("data after send", data);
       });
   };

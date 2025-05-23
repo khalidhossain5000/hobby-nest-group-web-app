@@ -1,6 +1,7 @@
 import React, { use } from "react";
 import { NavLink } from "react-router";
 import { AuthContext } from "../../Provider/AuthContext";
+import toast from "react-hot-toast";
 
 
 const NavBar = () => {
@@ -16,12 +17,22 @@ const NavBar = () => {
     const handleLogOut=()=>{
       logOutUser()
       .then(()=>{
-        alert("Log Out Success")
+        toast.success(`Log Out Successfull`, {
+            className: "w-[300px] h-[100px] text-xl font-bold ",
+            removeDelay: 1000,
+            iconTheme: {
+              primary: "#16061e",
+              secondary: "#ef54e2",
+            },
+            style: {
+              border: "1px solid black",
+              color: "white",
+              backgroundImage:
+                "linear-gradient(to bottom right,#4B5563,#9333EA, #3B82F6)",
+            },
+          });
       })
-      .catch((error)=>{
-        alert("Sign out error")
-        console.log(error);
-      })
+      
     }
   return (
     <div className="pb-8 absolute top-0 left-0 w-full z-50 bg-transparent text-white ">

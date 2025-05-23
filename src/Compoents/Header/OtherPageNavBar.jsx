@@ -1,6 +1,7 @@
 import React, { use } from "react";
 import { NavLink } from "react-router";
 import { AuthContext } from "../../Provider/AuthContext";
+import toast from "react-hot-toast";
 
 const OtherPageNavBar = () => {
   const { user, logOutUser } = use(AuthContext);
@@ -16,19 +17,31 @@ const OtherPageNavBar = () => {
         <NavLink to="/all-group">All Groups</NavLink>
       </li>
       <li>
-        <li><NavLink to={`/my-group/${user?.email}`}>My Group(P)</NavLink></li>
+        <li>
+          <NavLink to={`/my-group/${user?.email}`}>My Group(P)</NavLink>
+        </li>
       </li>
     </>
   );
   const handleLogOut = () => {
     logOutUser()
       .then(() => {
-        alert("Log Out Success");
+        toast.success(`Log Out Successfull`, {
+            className: "w-[300px] h-[100px] text-xl font-bold ",
+            removeDelay: 1000,
+            iconTheme: {
+              primary: "#16061e",
+              secondary: "#ef54e2",
+            },
+            style: {
+              border: "1px solid black",
+              color: "white",
+              backgroundImage:
+                "linear-gradient(to bottom right,#4B5563,#9333EA, #3B82F6)",
+            },
+          });
       })
-      .catch((error) => {
-        alert("Sign out error");
-        console.log(error);
-      });
+      
   };
   return (
     <div className=" w-full bg-gradient-to-r from-[#8e008e] via-[#ff69b4] to-[#be185d] text-black ">
@@ -43,7 +56,6 @@ const OtherPageNavBar = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -54,9 +66,38 @@ const OtherPageNavBar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-gray-800 rounded-box z-1 mt-3 w-52 text-white p-2 shadow"
             >
               {links}
+              {user ? (
+                <div className="">
+                  <div
+                    className="tooltip tooltip-bottom"
+                    data-tip={`${user.displayName}`}
+                  >
+                    <img
+                      className="w-12 h-12 rounded-full cursor-pointer"
+                      src={user.photoURL}
+                      alt=""
+                    />
+                  </div>
+                  <button
+                    onClick={handleLogOut}
+                    className="mt-12 btn bg-gradient-to-t from-[#b80af5] via-[#55077a] to-[#1e0630] text-pink-100 hover:shadow-2xl hover:shadow-purple-200 cursor-pointer border-1 border-pink-500  hover:bg-pink-700 hover:text-white"
+                  >
+                    Log Out
+                  </button>
+                </div>
+              ) : (
+                <div className="">
+                  <li>
+                    <NavLink to="/auth/register">Register(C)</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/auth/login">Login(C)</NavLink>
+                  </li>
+                </div>
+              )}
             </ul>
           </div>
           <div>
@@ -69,8 +110,15 @@ const OtherPageNavBar = () => {
 
             {user ? (
               <div className="flex items-center gap-3">
-                <div className="tooltip tooltip-bottom" data-tip={`${user.displayName}`}>
-                  <img className='w-22 h-22 rounded-full cursor-pointer' src={user.photoURL} alt="" /> 
+                <div
+                  className="tooltip tooltip-bottom"
+                  data-tip={`${user.displayName}`}
+                >
+                  <img
+                    className="w-22 h-22 rounded-full cursor-pointer"
+                    src={user.photoURL}
+                    alt=""
+                  />
                 </div>
                 <button
                   onClick={handleLogOut}

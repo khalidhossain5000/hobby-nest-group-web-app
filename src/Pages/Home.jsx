@@ -7,11 +7,14 @@ import OurCommunity from '../Compoents/OurCommiunitySection/OurCommunity';
 import Footer from '../Compoents/Footer/Footer';
 
 
+
 const Home = () => {
+
     return (
         // <Slider></Slider>
         <div>
-
+            
+            
             <Slider></Slider>
 
             <main className='container mx-auto relative'>

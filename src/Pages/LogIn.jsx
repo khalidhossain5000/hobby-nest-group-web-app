@@ -1,44 +1,95 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthContext';
 import bgImg from '../assets/authbg/sky-dar.jpg'
+import toast from 'react-hot-toast';
 const LogIn = () => {
     const {logInUser,handleGoogleUser}=use(AuthContext);
     const logInLocation = useLocation();
     const navigate=useNavigate()
-
+    const [wrongPassword, setWrongPassword] = useState("");
     const handleLogin=e=>{
         e.preventDefault();
         const form=e.target;
         const formData=new FormData(form);
         const {email,password}=Object.fromEntries(formData.entries())
-        // console.log(email,password);
+        setWrongPassword("")
         // FIREBASE USER 
         logInUser(email,password)
         .then((result)=>{
-            alert("log in success")
-            console.log(result);
+            toast.success(`Logged In SuccessFully`, {
+                    className: 'w-[300px] h-[100px] text-xl font-bold ',
+                    removeDelay: 1000,
+                    iconTheme: {
+                        primary: '#16061e',
+                        secondary: '#ef54e2',
+                    },
+                    style: {
+                        border: '1px solid black',
+                        color: 'white',
+                        backgroundImage: 'linear-gradient(to bottom right,#0d0518,#87d0c3, #600e8c)'
+                        
+                    },
+                });
+                console.log(result);
             // navigate(`${logInLocation.state ? logInLocation.state : "/"}`);
              navigate(`${logInLocation.state?.from || "/"}`,{replace:true} );
         })
         .catch((error)=>{
-            alert("error occured")
-            console.log(error);
+            setWrongPassword("Opps-Wrong password or email--Try again")
+            const errorCode = error.code;
+            toast.success(`Opps--${errorCode}`, {
+                    className: 'w-[300px] h-[100px] text-xl font-bold ',
+                    removeDelay: 1000,
+                    iconTheme: {
+                        primary: '#16061e',
+                        secondary: '#ef54e2',
+                    },
+                    style: {
+                        border: '1px solid black',
+                        color: 'white',
+                        backgroundImage: 'linear-gradient(to bottom right,#0d0518,#87d0c3, #600e8c)'
+                        
+                    },
+                });
         })
     }
     const handleGoogleLogin=()=>{
         handleGoogleUser()
         .then((result)=>{
-            alert("google user logged in")
-            console.log("google info",result);
+            toast.success('Google Logged In Successfull', {
+                    className: 'w-[300px] h-[100px] text-xl font-bold',
+                    removeDelay: 1000,
+                    iconTheme: {
+                        primary: '#16061e',
+                        secondary: '#ef54e2',
+                    },
+                    style: {
+                        border: '1px solid black',
+                        color: 'white',
+                        backgroundImage: 'linear-gradient(to bottom,#16061e, #ef54e2)'
+                    },
+                });
             // navigate(`${logInLocation.state ? logInLocation.state : "/"}`,{replace:true} );
             navigate(`${logInLocation.state?.from || "/"}`,{replace:true} );
             console.log(result);
         })
         .then((error)=>{
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(error,errorCode,errorMessage);
+            const errorCode = error.code;
+            toast.success(`Opps--${errorCode}`, {
+                    className: 'w-[300px] h-[100px] text-xl font-bold ',
+                    removeDelay: 1000,
+                    iconTheme: {
+                        primary: '#16061e',
+                        secondary: '#ef54e2',
+                    },
+                    style: {
+                        border: '1px solid black',
+                        color: 'white',
+                        backgroundImage: 'linear-gradient(to bottom right,#0d0518,#87d0c3, #600e8c)'
+                        
+                    },
+                });
         })
     }
     return (
@@ -73,9 +124,9 @@ const LogIn = () => {
 
 
                             {/* wrong pass */}
-                            {/* <div>
+                              <div>
                                 {wrongPassword && <h2 className='text-xl text-pink-600'>{wrongPassword}</h2>}
-                            </div> */}
+                            </div> *
                             <button className="btn w-full bg-transparent p-8 border-pink-300 text-xl text-pink-100 rounded-xl mt-4 hover:bg-gradient-to-tl hover:from-[#07233c] hover:via-[#1cc0de] hover:to-[#020611] transition duration-500">Login</button>
                         </form>
                         {/* social login start */}
@@ -98,8 +149,5 @@ const LogIn = () => {
         </div>
     );
 };
-// state={{from:loginLocation.state?.from || '/auth/my-profile'}} 
-//value={email}
-//onChange={(e)=>setEmail(e.target.value)} 
-//state={{email:email}}
+
 export default LogIn;
