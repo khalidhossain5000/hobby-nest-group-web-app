@@ -53,33 +53,33 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="contact">
+            <div className="contact mt-6 lg:mt-0">
               <h2 className="text-[#010f30] text-3xl font-bold mb-12">
                 Contact
               </h2>
               {/* join */}
 
-              <p className="mb-6 flex items-center gap-3 text-2xl font-semibold text-[#010f30]">
+              <p className="mb-6 flex items-center justify-center lg:justify-start gap-3 lg:text-2xl font-semibold text-[#010f30]">
                 <TiLocationArrowOutline size={40} className="text-pink-600" />
                 <span>New York Morris Street London 1234</span>
               </p>
-              <p className="mb-6 flex items-center gap-3 text-2xl font-semibold text-[#010f30]">
+              <p className="mb-6 flex justify-center lg:justify-start items-center gap-3 lg:text-2xl font-semibold text-[#010f30]">
                 <MdOutlineEmail size={30} className="text-pink-600" />
                 <span>info@example.com</span>
               </p>
-              <p className="flex items-center gap-3 text-2xl font-semibold text-[#010f30]">
+              <p className="flex justify-center lg:justify-start items-center gap-3 lg:text-2xl font-semibold text-[#010f30]">
                 <FaPhoneAlt size={30} className="text-pink-600" />
                 <span>01234567890</span>
               </p>
             </div>
 
-            <div className="socail">
+            <div className="socail mt-6 lg:mt-0">
               <h2 className="text-[#010f30] text-3xl font-bold mb-9">
                 Follow Us
               </h2>
               {/* join */}
 
-              <div className="md:grid grid-cols-2 items-end justify-between gap-9">
+              <div className="grid grid-cols-3 mx-3 lg:mx-0 md:grid-cols-2 items-end lg:justify-between gap-9">
                 <a href="https://facebook.com/" target="_blank">
                   <FaFacebook size={50} fill="#0195ff" />
                 </a>
