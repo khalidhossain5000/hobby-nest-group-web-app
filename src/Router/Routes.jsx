@@ -45,7 +45,7 @@ export const router = createBrowserRouter([
       fetch(
         `https://assignment-10-server-cyan-one.vercel.app/groups/${params.id}`
       ),
-    element: <GroupDetails />,
+    element: <PrivateRoute><GroupDetails /></PrivateRoute>,
     hydrateFallbackElement: <Loading></Loading>,
   },
   {
@@ -67,7 +67,7 @@ export const router = createBrowserRouter([
       fetch(
         `https://assignment-10-server-cyan-one.vercel.app/groups/${params.id}`
       ),
-    element: <UpdateGroup />,
+    element: <PrivateRoute><UpdateGroup /></PrivateRoute>,
     hydrateFallbackElement: <Loading></Loading>,
   },
   {
