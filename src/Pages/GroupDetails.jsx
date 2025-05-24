@@ -2,6 +2,7 @@ import React from "react";
 import { useLoaderData } from "react-router";
 import OtherPageNavBar from "../Compoents/Header/OtherPageNavBar";
 import Footer from "../Compoents/Footer/Footer";
+import ErrorPageGlobal from "./ErrorPageGlobal";
 
 
 const GroupDetails = () => {
@@ -14,6 +15,10 @@ const GroupDetails = () => {
     imageUrl,
     startDate,
   } = useLoaderData();
+  
+  if(!groupName){
+    return <ErrorPageGlobal/>
+  }
   return (
     <div className="">
       <header>

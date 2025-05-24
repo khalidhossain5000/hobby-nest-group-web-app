@@ -12,6 +12,7 @@ import UpdateGroup from "../Pages/UpdateGroup";
 import ErrorPageGlobal from "../Pages/ErrorPageGlobal";
 import PrivateRoute from "../Provider/PrivateRoute";
 import Loading from "../Compoents/Loading/Loading";
+import MyGroupEmpty from "../Compoents/MyGroupIntitialMessage/MyGroupEmpty";
 
 export const router = createBrowserRouter([
   {
@@ -35,18 +36,17 @@ export const router = createBrowserRouter([
   {
     path: "all-group",
     element: <AllGroup />,
-    loader: () =>
-      fetch("https://assignment-10-server-cyan-one.vercel.app/groups"),
+    loader: () =>fetch("https://assignment-10-server-cyan-one.vercel.app/groups"),
     hydrateFallbackElement: <Loading></Loading>,
   },
   {
     path: "all-group/:id",
     loader: ({ params }) =>
-      fetch(
-        `https://assignment-10-server-cyan-one.vercel.app/groups/${params.id}`
-      ),
+      fetch(`https://assignment-10-server-cyan-one.vercel.app/groups/${params.id}`)
+    ,
     element: <PrivateRoute><GroupDetails /></PrivateRoute>,
     hydrateFallbackElement: <Loading></Loading>,
+    errorElement:<ErrorPageGlobal/>
   },
   {
     path: "my-group/:email",
@@ -54,12 +54,14 @@ export const router = createBrowserRouter([
       fetch(
         `https://assignment-10-server-cyan-one.vercel.app/all-groups/${params.email}`
       ),
+      
     element: (
       <PrivateRoute>
         <MyGroup />
       </PrivateRoute>
     ),
     hydrateFallbackElement: <Loading></Loading>,
+    errorElement:<MyGroupEmpty/>
   },
   {
     path: "update-group/:id",
@@ -67,8 +69,10 @@ export const router = createBrowserRouter([
       fetch(
         `https://assignment-10-server-cyan-one.vercel.app/groups/${params.id}`
       ),
+    
     element: <PrivateRoute><UpdateGroup /></PrivateRoute>,
     hydrateFallbackElement: <Loading></Loading>,
+    errorElement:<ErrorPageGlobal/>
   },
   {
     path: "/auth",

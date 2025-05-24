@@ -7,7 +7,7 @@ import Footer from "../Compoents/Footer/Footer";
 
 const AllGroup = () => {
     const allGroupData=useLoaderData()
-    console.log(allGroupData);
+    
   return (
     <div>
       <header className="">

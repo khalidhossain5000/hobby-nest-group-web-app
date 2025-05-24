@@ -10,7 +10,7 @@ import toast from "react-hot-toast";
 
 const CreateGroup = () => {
   const [startDate, setStartDate] = useState(null);
-  // const [loader,setLoader]=useState(true)
+  
   const { user } = use(AuthContext);
   const email = user?.email;
 
@@ -19,10 +19,7 @@ const CreateGroup = () => {
     const form = e.target;
     const formData = new FormData(form);
     const createGroupData = Object.fromEntries(formData.entries());
-    if (!startDate) {
-      alert("select a date");
-      return;
-    }
+    
 
     // if(!email){
     //   return ;
