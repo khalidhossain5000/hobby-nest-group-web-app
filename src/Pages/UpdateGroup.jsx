@@ -7,6 +7,7 @@ import bgImg from "../assets/groupBg/evening-ii.jpg";
 import NavBar from "../Compoents/Header/NavBar";
 import Footer from "../Compoents/Footer/Footer";
 import toast from "react-hot-toast";
+
 const UpdateGroup = () => {
   const singleGroupData = useLoaderData();
   const {
@@ -72,6 +73,7 @@ const UpdateGroup = () => {
         style={{ backgroundImage: `url(${bgImg})` }}
         className="bg-cover bg-no-repeat py-36 bg-top-left"
       >
+        
         <h2 className="text-[#feedff] container mx-auto text-center text-6xl font-bold py-12">
           Update page
         </h2>

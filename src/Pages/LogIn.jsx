@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthContext';
 import bgImg from '../assets/authbg/sky-dar.jpg'
 import toast from 'react-hot-toast';
+
 const LogIn = () => {
     const {logInUser,handleGoogleUser}=use(AuthContext);
     const logInLocation = useLocation();
@@ -96,11 +97,7 @@ const LogIn = () => {
         <div style={{backgroundImage:`url(${bgImg})`}} className="py-16 bg-no-repeat bg-cover bg-top">
             
             <div className='py-24'>
-            {/* <div className="dynamic-title">
-                <Helmet>
-                    <title>Login</title>
-                </Helmet>
-            </div> */}
+             
             <div className="container mx-auto ">
                 <div className="title text-center space-y-2 py-12">
                     <h3 className='text-2xl font-bold text-gray-300'>Welcome Back</h3>
@@ -140,7 +137,7 @@ const LogIn = () => {
                         </div>
                         {/* DONT HAVE ACCOUNT START HERE*/}
                         <div>
-                            <h5 className='w-full mx-auto text-2xl text-gray-300'>Don't have an account? <Link state={{from:logInLocation.state?.from || '/auth/my-profile'}} to='/auth/register' className='text-pink-600 font-bold'>Register</Link> Here</h5>
+                            <h5 className='w-full mx-auto text-2xl text-gray-300'>Don't have an account? <Link state={{from:logInLocation.state?.from || '/'}} to='/auth/register' className='text-pink-600 font-bold'>Register</Link> Here</h5>
                         </div>
                     </div>
                 </div>

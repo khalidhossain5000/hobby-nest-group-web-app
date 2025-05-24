@@ -4,6 +4,7 @@ import { AuthContext } from "../Provider/AuthContext";
 import bgImg from "../assets/authbg/sky-dar.jpg";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
+
 const Register = () => {
   const { createUser, updateUserProfile, setUser, handleGoogleUser } =
     use(AuthContext);
@@ -145,11 +146,7 @@ const Register = () => {
       className="py-16 bg-no-repeat bg-cover bg-top"
     >
       <div className="py-24">
-        {/* <div className="dynamic-title">
-                <Helmet>
-                    <title>Register</title>
-                </Helmet>
-            </div> */}
+        
         <div className="container mx-auto">
           <div className="title text-center space-y-2 py-12">
             <h1 className="text-6xl font-bold text-[#fffaff]">

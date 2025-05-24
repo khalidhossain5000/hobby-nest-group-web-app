@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router";
 import OtherPageNavBar from "../Compoents/Header/OtherPageNavBar";
 import Footer from "../Compoents/Footer/Footer";
 
+
 const GroupDetails = () => {
   const {
     groupName,
@@ -19,6 +20,7 @@ const GroupDetails = () => {
         <OtherPageNavBar />
       </header>
       <main className="bg-gradient-to-br from-[#0d0518] via-[#3c0648] to-[#600e8c]">
+        
         <h1 className="text-[#feedff] text-center text-2xl md:text-3xl lg:text-6xl font-bold py-12 lg:py-24 ">
           Welcome To {groupName} Page
         </h1>

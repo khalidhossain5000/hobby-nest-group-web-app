@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import OtherPageNavBar from "../Compoents/Header/OtherPageNavBar";
 import Footer from "../Compoents/Footer/Footer";
 import MyGroupEmpty from "../Compoents/MyGroupIntitialMessage/MyGroupEmpty";
+
 const MyGroup = () => {
   const myGroupData = useLoaderData();
   const [groupAllData, setGroupAllData] = useState(myGroupData);
@@ -50,6 +51,7 @@ const MyGroup = () => {
         <OtherPageNavBar />
       </header>
       <main className="bg-gradient-to-br from-[#0d0518] via-[#3c0648] to-[#600e8c]">
+        
         <div className="text-[#feedff] container mx-auto text-center text-6xl font-bold py-16 ">
           <h2>My Group</h2>
           <div className="mt-16 overflow-x-auto">

@@ -9,15 +9,12 @@ const ErrorPageGlobal = () => {
     return (
 
         <div >
-            {/* <div className="dynamic-title">
-               <Helmet>
-                <title>Error-404|</title>
-               </Helmet>
-            </div> */}
+            
             <header>
                 <OtherPageNavBar />
             </header>
             <main className='relative py-24 px-2 lg:px-0 bg-gradient-to-br from-[#000626] to-[#4a92ea]'>
+                
                 <div className="container mx-auto flex items-center justify-between gap-6">
                     <div className="title lg:w-[50%]">
                         <h1 className='text-[210px] text-[#20ca6f] '>404</h1>

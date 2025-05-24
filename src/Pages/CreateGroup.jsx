@@ -69,6 +69,7 @@ const CreateGroup = () => {
         style={{ backgroundImage: `url(${bgImg})` }}
         className="bg-cover bg-no-repeat py-36 bg-top-left"
       >
+        
         <h1 className="text-[#feedff] container mx-auto text-center text-4xl lg:text-6xl font-bold py-12">
           Create Group
         </h1>
