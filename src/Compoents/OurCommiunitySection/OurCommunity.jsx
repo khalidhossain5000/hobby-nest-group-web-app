@@ -11,8 +11,9 @@ import { RiEdgeNewLine } from "react-icons/ri";
 
 const OurCommunity = () => {
   return (
-    <div className="py-24">
+    <div className="py-24 ">
       <Zoom>
+        
         <h1 className="text-6xl font-bold text-pink-600 text-center pt-6 pb-12">
           Our Community In Numbers
         </h1>

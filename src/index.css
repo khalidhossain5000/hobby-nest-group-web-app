@@ -1,11 +1,15 @@
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui"
+
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 a.active{
   border-bottom: 3px solid blue;
   padding-bottom: 5px;
   
 }
+
 
 
 

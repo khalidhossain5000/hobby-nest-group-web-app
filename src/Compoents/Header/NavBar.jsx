@@ -7,16 +7,27 @@ import logo from '../../assets/logo/logo-transparent.png'
 
 const NavBar = () => {
   const {user,logOutUser}=use(AuthContext)
- 
-  const [theme,setTheme] =useState(localStorage.getItem('theme') || 'light');
+ //dark mode start
+ const [theme,setTheme]=useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
 
-  useEffect(()=>{
-    document.documentElement.setAttribute('data-theme',theme);
-    localStorage.setItem('theme',theme);
-  },[theme])
+ useEffect(()=>{
+  localStorage.setItem("theme",theme);
+  const localTheme=localStorage.getItem("theme");
+  document.querySelector("html").setAttribute("data-theme",localTheme)
+ },[theme])
+ //dark mode end
 
-  const toggleTheme=()=>{
-    setTheme(theme === 'light' ? 'dark' : 'light')
+  const toggleTheme=(e)=>{
+    
+    if(e.target.checked){
+      setTheme("dark")
+       
+    }
+    else{
+      setTheme("light")
+      
+    }
+    
   }
     const links=<>
             <li><NavLink to='/'>Home</NavLink></li>

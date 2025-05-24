@@ -8,7 +8,7 @@ import CategorySlider from "./CategorySlider";
 const PopularCategory = () => {
   return (
     <div className="py-24">
-      <h5 className="text-center"><TypeAnimation
+      <h5 className="text-center text-purple-600 "><TypeAnimation
       sequence={[
         // Same substring at the start will only be typed out once, initially
         'Explore',
@@ -20,7 +20,7 @@ const PopularCategory = () => {
       ]}
       wrapper="span"
       speed={50}
-      style={{ fontSize: '2rem', display: 'inline-block',color:'#6004b2',fontWeight:'bold',textAlign:'center'}}
+      style={{ fontSize: '2rem', display: 'inline-block',fontWeight:'bold',textAlign:'center'}}
       repeat={Infinity}
     /></h5>
       
