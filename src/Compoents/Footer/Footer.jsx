@@ -7,19 +7,20 @@ import { FaFacebook, FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import { NavLink } from "react-router";
 import logo from '../../assets/logo/logo.png'
+import { DarkContext } from "../../Provider/DarkModeContext";
 const Footer = () => {
   const { user } = use(AuthContext);
-
+  const{theme}=use(DarkContext)
   return (
-    <div className=" bg-[#ecf5fb] pt-24">
+    <div className={`bg-[#ecf5fb] pt-24 ${theme==='dark' ? '!bg-[#0d0518]' :''}`}>
       <div className="">
         <div className="container mx-auto">
           <div className="py-12 content text-center lg:text-left lg:flex  lg:justify-between">
-            <div className="info ">
+            <div className={`info`}>
               
               <div className="icon-title mt-6 mx-auto">
                 <img className="max-w-[150px] mx-auto lg:max-w-[250px] " src={logo} alt="" />
-                <p className="text-[#364863] text-[18px] max-w-sm mt-3 md:mt-6 lg:mt-9">
+                <p className={`${theme==='dark' ? '!text-pink-100' : ''} text-[#364863] text-[18px] max-w-sm mt-3 md:mt-6 lg:mt-9`}>
                   Blienum nhaedrum torquatos nec eul, vietraxit periculis ex,
                   nihil is in mei. Xei ariculaeuripidis, fincartem ei est.
                   Dlienum phaed is in mei. Lei an Hericulaeuripidis, hincartem
@@ -29,10 +30,10 @@ const Footer = () => {
             </div>
 
             <div className="links text-white text-xl space-y-3">
-              <h2 className="text-[#010f30] text-3xl font-bold">
+              <h2 className={`${theme==='dark' ? '!text-pink-100' : ''}text-[#010f30] text-3xl font-bold`}>
                 UseFul Links
               </h2>
-              <ul className="mt-3 lg:mt-9 text-xl font-medium text-[#010f30] space-y-4">
+              <ul className={`${theme==='dark' ? '!text-pink-100' : ''} mt-3 lg:mt-9 text-xl font-medium text-[#010f30] space-y-4`}>
                 <li>
                   <NavLink to="/">Home</NavLink>
                 </li>
@@ -55,27 +56,27 @@ const Footer = () => {
             </div>
 
             <div className="contact mt-6 lg:mt-0">
-              <h2 className="text-[#010f30] text-3xl font-bold mb-12">
+              <h2 className={`${theme==='dark' ? '!text-pink-100' : ''}text-[#010f30] text-3xl font-bold mb-12`}>
                 Contact
               </h2>
               {/* join */}
 
-              <p className="mb-6 flex items-center justify-center lg:justify-start gap-3 lg:text-2xl font-semibold text-[#010f30]">
+              <p className={`${theme==='dark' ? '!text-pink-100' : ''} mb-6 flex items-center justify-center lg:justify-start gap-3 lg:text-2xl font-semibold text-[#010f30]`}>
                 <TiLocationArrowOutline size={40} className="text-pink-600" />
                 <span>New York Morris Street London 1234</span>
               </p>
-              <p className="mb-6 flex justify-center lg:justify-start items-center gap-3 lg:text-2xl font-semibold text-[#010f30]">
+              <p className={`${theme==='dark' ? '!text-pink-100' : ''} mb-6 flex justify-center lg:justify-start items-center gap-3 lg:text-2xl font-semibold text-[#010f30]`}>
                 <MdOutlineEmail size={30} className="text-pink-600" />
                 <span>info@example.com</span>
               </p>
-              <p className="flex justify-center lg:justify-start items-center gap-3 lg:text-2xl font-semibold text-[#010f30]">
+              <p className={`${theme==='dark' ? '!text-pink-100' : ''} flex justify-center lg:justify-start items-center gap-3 lg:text-2xl font-semibold text-[#010f30]`}>
                 <FaPhoneAlt size={30} className="text-pink-600" />
                 <span>01234567890</span>
               </p>
             </div>
 
             <div className="socail mt-6 lg:mt-0">
-              <h2 className="text-[#010f30] text-3xl font-bold mb-9">
+              <h2 className={`${theme==='dark' ? '!text-pink-100' : ''}text-[#010f30] text-3xl font-bold mb-9`}>
                 Follow Us
               </h2>
               {/* join */}

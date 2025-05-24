@@ -6,9 +6,11 @@ import AuthProvider from './Provider/AuthProvider.jsx'
 import { RouterProvider } from 'react-router'
 import { router } from './Router/Routes.jsx'
 import { Toaster } from 'react-hot-toast'
+import DarkProvider from './Provider/DarkProvider.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <DarkProvider>
     <AuthProvider>
       <RouterProvider router={router}></RouterProvider>
        <Toaster
@@ -16,5 +18,6 @@ createRoot(document.getElementById('root')).render(
         reverseOrder={false}
       />
     </AuthProvider>
+    </DarkProvider>
   </StrictMode>,
 )

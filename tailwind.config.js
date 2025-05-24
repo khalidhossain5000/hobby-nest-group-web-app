@@ -9,7 +9,9 @@ export default {
    plugins: [],
    daisyui:{
     themes:["light","dark"]
-   }
+   },
+     darkMode: "class", // very important!
+
  }
 
  
