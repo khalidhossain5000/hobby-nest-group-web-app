@@ -4,7 +4,6 @@ import OtherPageNavBar from "../Compoents/Header/OtherPageNavBar";
 import Footer from "../Compoents/Footer/Footer";
 import ErrorPageGlobal from "./ErrorPageGlobal";
 
-
 const GroupDetails = () => {
   const {
     groupName,
