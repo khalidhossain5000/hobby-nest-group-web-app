@@ -3,8 +3,11 @@ import { NavLink } from "react-router";
 import { AuthContext } from "../../Provider/AuthContext";
 import toast from "react-hot-toast";
 import logo from "../../assets/logo/logo-transparent.png"
+import { DarkContext } from "../../Provider/DarkModeContext";
+import DarkToggleBtn from "../DarkModeToggle/DarkToggleBtn";
 const OtherPageNavBar = () => {
   const { user, logOutUser } = use(AuthContext);
+  const {theme,toggleTheme}=use(DarkContext)
   const links = (
     <>
       <li>
@@ -19,6 +22,7 @@ const OtherPageNavBar = () => {
       <li>
           <NavLink to={`/my-group/${user?.email}`}>My Group(P)</NavLink>
       </li>
+      <DarkToggleBtn theme={theme} toggleTheme={toggleTheme}/>
     </>
   );
   const handleLogOut = () => {
