@@ -12,9 +12,9 @@ const NavBar = () => {
 
     const links=<>
             <li><NavLink to='/'>Home</NavLink></li>
-            <li><NavLink to='/create-group'>Create Group(P)</NavLink></li>
+            <li><NavLink to='/create-group'>Create Group</NavLink></li>
             <li><NavLink to='/all-group'>All Groups</NavLink></li>
-            <li><NavLink to={`/my-group/${user?.email}`}>My Group(P)</NavLink></li>
+            <li><NavLink to={`/my-group/${user?.email}`}>My Group</NavLink></li>
             <DarkToggleBtn theme={theme} toggleTheme={toggleTheme}/>
           
 
@@ -90,8 +90,8 @@ const NavBar = () => {
                 <div className="tooltip tooltip-bottom" data-tip={`${user.displayName}`}>
                   <img className='w-22 h-22 rounded-full cursor-pointer' src={user.photoURL} alt="" /> 
                 </div>
-                <button onClick={handleLogOut} className="mt-3 btn bg-gradient-to-t from-[#b80af5] via-[#55077a] to-[#1e0630] text-pink-100 hover:shadow-2xl hover:shadow-purple-200 cursor-pointer border-1 border-pink-500 px-2  hover:bg-pink-700 hover:text-white">Log Out</button></div> : <div className="flex items-center gap-3"><li><NavLink to='/auth/register'>Register(C)</NavLink></li>
-                                        <li><NavLink to='/auth/login'>Login(C)</NavLink></li>
+                <button onClick={handleLogOut} className="mt-3 btn bg-gradient-to-t from-[#b80af5] via-[#55077a] to-[#1e0630] text-pink-100 hover:shadow-2xl hover:shadow-purple-200 cursor-pointer border-1 border-pink-500 px-2  hover:bg-pink-700 hover:text-white">Log Out</button></div> : <div className="flex items-center gap-3"><li><NavLink to='/auth/register'>Register</NavLink></li>
+                                        <li><NavLink to='/auth/login'>Login</NavLink></li>
                                     </div>
               }
           </ul>

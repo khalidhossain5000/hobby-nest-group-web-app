@@ -14,13 +14,13 @@ const OtherPageNavBar = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/create-group">Create Group(P)</NavLink>
+        <NavLink to="/create-group">Create Group</NavLink>
       </li>
       <li>
         <NavLink to="/all-group">All Groups</NavLink>
       </li>
       <li>
-          <NavLink to={`/my-group/${user?.email}`}>My Group(P)</NavLink>
+          <NavLink to={`/my-group/${user?.email}`}>My Group</NavLink>
       </li>
       <DarkToggleBtn theme={theme} toggleTheme={toggleTheme}/>
     </>
@@ -93,10 +93,10 @@ const OtherPageNavBar = () => {
               ) : (
                 <div className="">
                   <li>
-                    <NavLink to="/auth/register">Register(C)</NavLink>
+                    <NavLink to="/auth/register">Register</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/auth/login">Login(C)</NavLink>
+                    <NavLink to="/auth/login">Login</NavLink>
                   </li>
                 </div>
               )}
