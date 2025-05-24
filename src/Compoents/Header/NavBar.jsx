@@ -14,8 +14,9 @@ const NavBar = () => {
   localStorage.setItem("theme",theme);
   const localTheme=localStorage.getItem("theme");
   document.querySelector("html").setAttribute("data-theme",localTheme)
+  
  },[theme])
- //dark mode end
+//  dark mode end
 
   const toggleTheme=(e)=>{
     
@@ -35,9 +36,9 @@ const NavBar = () => {
             <li><NavLink to='/all-group'>All Groups</NavLink></li>
             <li><NavLink to={`/my-group/${user?.email}`}>My Group(P)</NavLink></li>
             
-            <button onClick={toggleTheme}>
-            <DarkToggleBtn/>
-          </button>
+            
+            <DarkToggleBtn theme={theme} toggleTheme={toggleTheme}/>
+          
 
     </>
     const handleLogOut=()=>{

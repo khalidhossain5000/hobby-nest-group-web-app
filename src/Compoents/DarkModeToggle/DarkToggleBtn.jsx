@@ -1,11 +1,11 @@
 import React from "react";
 
-const DarkToggleBtn = () => {
+const DarkToggleBtn = ({theme,toggleTheme}) => {
   return (
     <div>
       <label className="swap swap-rotate">
   {/* this hidden checkbox controls the state */}
-  <input type="checkbox" className="theme-controller" value="synthwave" />
+  <input type="checkbox" onChange={toggleTheme} checked={theme==='dark'} className="theme-controller" value="synthwave" />
 
   {/* sun icon */}
   <svg
@@ -30,3 +30,8 @@ const DarkToggleBtn = () => {
 };
 
 export default DarkToggleBtn;
+
+
+
+
+
