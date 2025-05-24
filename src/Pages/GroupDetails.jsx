@@ -15,9 +15,7 @@ const GroupDetails = () => {
     startDate,
   } = useLoaderData();
   
-  if(!groupName){
-    return <ErrorPageGlobal/>
-  }
+  
   return (
     <div className="">
       <header>
