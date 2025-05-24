@@ -14,8 +14,10 @@ const Home = () => {
         // <Slider></Slider>
         <div>
             
-            
+            <header className='overflow-x-hidden'> 
+
             <Slider></Slider>
+            </header>
 
             <main className='container mx-auto relative'>
                 <FeaturedGroup></FeaturedGroup>

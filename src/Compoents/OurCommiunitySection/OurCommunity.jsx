@@ -47,7 +47,7 @@ const OurCommunity = () => {
         </JackInTheBox>
 
         <JackInTheBox duration={3000}>
-          <div className="w-[290px] p-4 lg:p-6 rounded-2xl bg-gradient-to-br from-[#1171dd] via-[#200633] to-[#d72bba] border border-pink-300 shadow-lg shadow-purple-700 hover:shadow-2xl hover:shadow-purple-300">
+          <div className="lg:w-[290px] p-4 lg:p-6 rounded-2xl bg-gradient-to-br from-[#1171dd] via-[#200633] to-[#d72bba] border border-pink-300 shadow-lg shadow-purple-700 hover:shadow-2xl hover:shadow-purple-300">
             <div className="mx-auto text-center text-pink-200">
               <BiSolidCategory style={{ margin: "auto" }} size={90} />
             </div>

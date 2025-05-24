@@ -16,9 +16,9 @@ const Footer = () => {
         <div className="container mx-auto">
           <div className="py-12 content text-center lg:text-left lg:flex  lg:justify-between">
             <div className="info ">
-              {/* <img className='mx-auto' src={logo} alt="" /> */}
+              
               <div className="icon-title mt-6 mx-auto">
-                <img className="max-w-[150px] lg:max-w-[250px] " src={logo} alt="" />
+                <img className="max-w-[150px] mx-auto lg:max-w-[250px] " src={logo} alt="" />
                 <p className="text-[#364863] text-[18px] max-w-sm mt-3 md:mt-6 lg:mt-9">
                   Blienum nhaedrum torquatos nec eul, vietraxit periculis ex,
                   nihil is in mei. Xei ariculaeuripidis, fincartem ei est.
