@@ -30,7 +30,7 @@ You can either:
   - Select **“Download ZIP”**
   - Extract the ZIP file to your desired location
 
-#OR
+# OR
 
 
 ### 1. **Clone the repository**
