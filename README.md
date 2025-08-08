@@ -21,6 +21,18 @@ HobbyHub is a platform where people can discover and join local hobby-based grou
 ---
 ## Steps to Run Locally
 
+### 1. **Download or Clone the Project**
+
+You can either:
+
+- **Download ZIP**
+  - Click the green **“Code”** button in the GitHub repository
+  - Select **“Download ZIP”**
+  - Extract the ZIP file to your desired location
+
+#OR
+
+
 ### 1. **Clone the repository**
 ```bash
   git clone https://github.com/khalidhossain5000/hobby-nest-group-web-app.git
