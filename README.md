@@ -10,7 +10,7 @@ HobbyHub is a platform where people can discover and join local hobby-based grou
 
 
 
-##🚀🚀 Project Live Url : https://assignment-10-hobby-hub-group-app.netlify.app/
+##🚀🚀 Project Live Url : https://hobby-nest.netlify.app/ 
 
 
 ## Features
