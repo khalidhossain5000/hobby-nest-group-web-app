@@ -98,7 +98,10 @@ http://localhost:3000
 - Group can be update and also can be deleted.
 - Data will be stored in MongoDB.
 
-
+## Main Technologies Used:
+- Frontend: React, Tailwind CSS, Firebase,Firebase Authentications,TanStack Query
+- Backend: Node.js, Express.js, MongoDB,Cors
+- Deployment: Vercel, Netlify
 
 
 ## Dependencies  :
